@@ -90,7 +90,12 @@ const Navbar = (props) => {
             )}
           </a>
           <div className="menu-and-burger">
-            <button className="menu-button-small">VISA MENY </button>
+            <button
+              className="menu-button-small"
+              onClick={() => props.openMenu(true)}
+            >
+              VISA MENY{" "}
+            </button>
             <div
               className="navbar-burger"
               data-target="navbarDropdownContent"
@@ -127,6 +132,7 @@ const Navbar = (props) => {
                 className="social-medias-instagram"
                 target="_blank"
                 rel="noreferrer"
+                href={props.profile?.instagram}
               >
                 <IoLogoInstagram fill="#fff" />
               </a>

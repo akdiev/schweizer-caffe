@@ -14,17 +14,17 @@ import { useMediaQuery } from "react-responsive";
 import ContactUs from "../components/contact/contactUs";
 import EventsGallery from "../components/events/eventsGallery";
 import Menu from "../components/menu/menu";
+// import { getStaticProps } from "../utils/services";
+import axios from "axios";
 
-const Home: NextPage = () => {
+function Home({ data }) {
   const topRef = useRef(null);
   const router = useRouter();
   const [menuIsOpened, setMenuIsOpened] = useState(false);
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
-  // async function getStaticProps(context = null) {
-  //   profile = await getProfileData_One(context);
-  // }
+  let profile = data;
 
   function scollToElement(element) {
     scroller.scrollTo(element, {
@@ -47,65 +47,9 @@ const Home: NextPage = () => {
     ],
   ];
 
-  let profile = {
-    active_gallery: 208,
-    address: "Slakterigatan 6-10, 721 32 Västerås",
-    categories: [
-      { id: 49, name: "Mexikanskt" },
-      { id: 54, name: "Lunch" },
-    ],
-    city_id: 1,
-    closed: false,
-    custom_working_time: [
-      {
-        date: "2021-09-02",
-        date_range: "2021-09-05",
-        start: null,
-        end: null,
-        closed: 1,
-      },
-    ],
-    description:
-      "Vår restaurang hittar ni inne på Saluhallen Slakteriet. Här serverar vi allt från förrätter till desserter samt bland annat våra superpopulära tacos. Vi har fullständiga rättigheter.",
-    email: "HEJ@MRMANGOSTREETFOOD.COM",
-    facebook: "https://www.facebook.com/MrMangostreetfood/",
-    featured: 1,
-    id: 251,
-    image: testImages,
-    instagram: "https://www.instagram.com/mrmangostreetfood/",
-    logo: "",
-    lunch_time: [
-      { day: 1, start: null, end: null, closed: 1 },
-      { day: 2, start: null, end: null, closed: 1 },
-    ],
-    map_lat: "59.59192615426432",
-    map_lon: "16.51395766115796",
-    name: "Mr.Mango Saluhallen Slakteriet",
-    package_can: [
-      "menage gallery",
-      "menage event",
-      "menage lunch",
-      "menage menu",
-      "menage analytics social media",
-    ],
-    phone: "021-33 01 00",
-    price_range: { id: 1, name: "Snabbt - $", description: null },
-    public: 1,
-    rating: 5,
-    website: "caffeschweizer.com",
-    with: null,
-
-    working_time: {
-      friday: [{ start: "8:00", end: "20:00", closed: false }],
-      monday: [{ start: null, end: null, closed: true }],
-      saturday: [{ start: "8:00", end: "16:00", closed: false }],
-      sunday: [{ start: "8:00", end: "16:00", closed: false }],
-      thursday: [{ start: "8:00", end: "18:00", closed: false }],
-      tuesday: [{ start: "8:00", end: "14:00", closed: false }],
-      wednesday: [{ start: "8:00", end: "14:00", closed: false }],
-    },
-  };
-
+  // useEffect(() => {
+  //   getStaticProps(null).then((data) => (profile = data.props.data));
+  // }, []);
   useEffect(() => {
     if (menuIsOpened) {
       document.querySelector("html").classList.add("is-clipped");
@@ -123,6 +67,7 @@ const Home: NextPage = () => {
     <div ref={topRef} className="fullpage">
       <Navbar
         openMenu={setMenuIsOpened}
+        profile={profile}
         scrollTo={(element) => scollToElement(element)}
       />
       <Element name="#home">
@@ -134,7 +79,7 @@ const Home: NextPage = () => {
       </Element>
 
       <Element name="#about">
-        <About images={testImages} />
+        <About images={testImages} openMenu={setMenuIsOpened} />
       </Element>
 
       <History images={testImages} />
@@ -143,11 +88,22 @@ const Home: NextPage = () => {
       </Element>
       <ContactUs />
 
-      <Footer isMobile={isMobile} scrollToTop={executeScroll} />
+      <Footer
+        profile={profile}
+        isMobile={isMobile}
+        scrollToTop={executeScroll}
+      />
 
-      {menuIsOpened && <Menu />}
+      {menuIsOpened && <Menu closeModal={() => setMenuIsOpened(false)} />}
     </div>
   );
-};
+}
+
+export async function getStaticProps(context) {
+  let {
+    data: { data },
+  } = await axios("https://login.guestie.se/api/profiles/330/", context);
+  return { props: { data } };
+}
 
 export default Home;

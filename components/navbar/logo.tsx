@@ -1,5 +1,5 @@
 const Logo = ({ imgSource }) => {
-  return <img src={imgSource} alt="logo" />;
+  return <img className="logo-component" src={imgSource} alt="logo" />;
 };
 
 export default Logo;

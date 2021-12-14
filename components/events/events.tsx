@@ -40,7 +40,7 @@ const RestaurantEvents = () => {
     },
     {
       id: 1,
-      image: "images/eventimage1.jpg",
+      image: "images/eventimage2.jpg",
       title: "Libero commodo arcu elementum eget pharetra.",
       eventTime: "Varje tisdag | 15:00 - 20:00",
       description:
@@ -49,7 +49,7 @@ const RestaurantEvents = () => {
     },
     {
       id: 2,
-      image: "images/eventimage1.jpg",
+      image: "images/eventimage3.jpg",
       title: "Libero commodo arcu elementum eget pharetra.",
       eventTime: "Varje tisdag | 15:00 - 20:00",
       description:
@@ -58,7 +58,7 @@ const RestaurantEvents = () => {
     },
     {
       id: 3,
-      image: "images/eventimage1.jpg",
+      image: "",
       title: "Libero commodo arcu elementum eget pharetra.",
       eventTime: "Varje tisdag | 15:00 - 20:00",
       description:
@@ -207,7 +207,8 @@ const EventMenuCard = ({ content, ...props }) => {
   const router = useRouter();
   return (
     <div className="event-card-container">
-      <img alt="food" src={content.image}></img>
+      {content.image ? <img alt="food" src={content.image}></img> : ""}
+
       <div>
         <div className="title-event-time-container">
           <h1 className="title">{content.title}</h1>

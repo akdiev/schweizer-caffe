@@ -10,6 +10,10 @@
   overflow-y: auto;
 }
 
+.green-background::-webkit-scrollbar {
+  display: none;
+}
+
 .menu-header-wrapper {
   display: flex;
   width: 100%;
@@ -128,4 +132,65 @@
 
 .is-clipped {
   overflow: hidden;
+}
+
+.close-modal-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  border-radius: 99px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 767px) {
+  .mobile-header {
+    img {
+      width: 250px;
+      margin-top: 25px;
+      margin-left: 25px;
+    }
+  }
+  .close-modal-button {
+    top: 29px;
+    height: 40px;
+    width: 40px;
+    position: fixed;
+  }
+  .menu-header-title {
+    font-size: 32px;
+  }
+
+  .menu-header {
+    width: 100%;
+    padding: 20px 0 20px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .pdf-download {
+    padding: 8px 8px;
+    margin-right: 16px;
+  }
+
+  .regular-menu {
+    flex-direction: column;
+  }
+
+  .lunch-category {
+    margin: 3% 3.5%;
+  }
+
+  .menu-card-item {
+    width: 100%;
+    padding: 10px 10px 10px 15px;
+    img {
+      margin: 0px;
+      width: 100%;
+    }
+  }
 }

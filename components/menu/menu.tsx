@@ -4,12 +4,11 @@ import { AiOutlineDownload } from "react-icons/ai";
 import Columns from "../../assets/Bulma/Columns";
 import Column from "../../assets/Bulma/Column";
 import { useMediaQuery } from "react-responsive";
-import { useRouter } from "next/dist/client/router";
+import { AiOutlineClose } from "react-icons/ai";
 
-const Menu = () => {
+const Menu = (props) => {
   const menuItems = [];
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const [displayMenu, setDisplayMenu] = useState(false);
 
   const testMeal = {
     mealName: "Mughal Empire Salmon Salad",
@@ -27,17 +26,32 @@ const Menu = () => {
   fillMenu();
   return (
     <div className="green-background">
-      <div className="menu-header-wrapper">
-        <div className="menu-header">
+      <span className="close-modal-button" onClick={() => props.closeModal()}>
+        <AiOutlineClose />
+      </span>
+      {isMobile ? (
+        <div className="mobile-header">
           <Logo imgSource="images/white-logo.svg" />
-          <h1 className="menu-header-title">LunchMeny</h1>
-          <button className="pdf-download">
-            <AiOutlineDownload />
-            <span>Download PDF</span>
-          </button>
+          <div className="menu-header">
+            <h1 className="menu-header-title">LunchMeny</h1>
+            <button className="pdf-download">
+              <AiOutlineDownload />
+              <span>Download PDF</span>
+            </button>
+          </div>
         </div>
-      </div>
-      {console.log(displayMenu)}
+      ) : (
+        <div className="menu-header-wrapper">
+          <div className="menu-header">
+            <h1 className="menu-header-title">LunchMeny</h1>
+            <button className="pdf-download">
+              <AiOutlineDownload />
+              <span>Download PDF</span>
+            </button>
+          </div>
+        </div>
+      )}
+
       <div className="restaurant-menu-content">
         <h2 className="lunch-category"> Lunch category 01</h2>
         <div className="regular-menu">

@@ -16,6 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 40px;
   }
 
   &-section {
@@ -296,7 +297,6 @@
 
 .menu-button-small {
   background: #ca9f68;
-  border-radius: 40px;
   border-color: transparent;
   height: 35px;
   padding: 8px 12px;

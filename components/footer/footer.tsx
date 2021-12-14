@@ -4,7 +4,7 @@ import FacebookIcon from "../../assets/icons/facebook-icon";
 import { BsInstagram } from "react-icons/bs";
 import Logo from "../navbar/logo";
 
-const Footer = (props: any) => {
+const Footer = ({ ...props }) => {
   return (
     <div className="footer">
       {props.isMobile ? (
@@ -52,14 +52,13 @@ const Footer = (props: any) => {
         </>
       )}
       <div></div>
-
       {!props.isMobile ? (
         <div className="social-footer">
           <div className="icons">
-            <a href="instagram.com>">
+            <a href={props.profile?.instagram}>
               <BsInstagram className="instagram-icon" />
             </a>
-            <a href="facebook.com">
+            <a href={props.profile?.facebook}>
               <FacebookIcon />
             </a>
           </div>
