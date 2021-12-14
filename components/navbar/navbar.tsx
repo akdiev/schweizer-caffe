@@ -72,7 +72,7 @@ const Navbar = (props) => {
           </div>
           <button
             className="menu-button-higher"
-            onClick={() => router.push("#menu")}
+            onClick={props.openMenu(false)}
           >
             VISA MENY
           </button>

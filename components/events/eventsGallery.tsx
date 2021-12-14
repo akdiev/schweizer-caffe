@@ -30,7 +30,7 @@ const EventsGallery = (props) => {
       {props.rows !== 1 ? (
         <div className="gallery-row">
           {eventsGallery.reverse().map((picture, k) => (
-            <img src={picture} className="event-gallery-picture" />
+            <img key={k} src={picture} className="event-gallery-picture" />
           ))}
         </div>
       ) : (

@@ -18,6 +18,7 @@ import Menu from "../components/menu/menu";
 const Home: NextPage = () => {
   const topRef = useRef(null);
   const router = useRouter();
+  const [menuIsOpened, setMenuIsOpened] = useState(false);
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
@@ -25,8 +26,9 @@ const Home: NextPage = () => {
   //   profile = await getProfileData_One(context);
   // }
 
+  console.log(router.route);
+
   function scollToElement(element) {
-    console.log(element);
     scroller.scrollTo(element, {
       duration: 800,
       delay: 0,
@@ -112,8 +114,11 @@ const Home: NextPage = () => {
 
   return (
     <div ref={topRef} className="fullpage">
-      {/* <Navbar scrollTo={(element) => scollToElement(element)} /> */}
-      {/* <Element name="#home">
+      <Navbar
+        openMenu={() => setMenuIsOpened(true)}
+        scrollTo={(element) => scollToElement(element)}
+      />
+      <Element name="#home">
         <Hero profile={profile} />
       </Element>
       <Element name="#restaurant">
@@ -131,9 +136,9 @@ const Home: NextPage = () => {
       </Element>
       <ContactUs />
 
-      <Footer isMobile={isMobile} scrollToTop={executeScroll} /> */}
+      <Footer isMobile={isMobile} scrollToTop={executeScroll} />
 
-      <Menu />
+      <Menu menuIsOpened={menuIsOpened} />
     </div>
   );
 };
