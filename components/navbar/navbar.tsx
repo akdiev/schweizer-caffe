@@ -72,7 +72,7 @@ const Navbar = (props) => {
           </div>
           <button
             className="menu-button-higher"
-            onClick={props.openMenu(false)}
+            onClick={() => props.openMenu(true)}
           >
             VISA MENY
           </button>

@@ -26,8 +26,6 @@ const Home: NextPage = () => {
   //   profile = await getProfileData_One(context);
   // }
 
-  console.log(router.route);
-
   function scollToElement(element) {
     scroller.scrollTo(element, {
       duration: 800,
@@ -108,6 +106,15 @@ const Home: NextPage = () => {
     },
   };
 
+  useEffect(() => {
+    if (menuIsOpened) {
+      document.querySelector("html").classList.add("is-clipped");
+    }
+    return () => {
+      document.querySelector("html").classList.remove("is-clipped");
+    };
+  }, [menuIsOpened]);
+
   const executeScroll = () => {
     topRef.current.scrollIntoView();
   };
@@ -115,7 +122,7 @@ const Home: NextPage = () => {
   return (
     <div ref={topRef} className="fullpage">
       <Navbar
-        openMenu={() => setMenuIsOpened(true)}
+        openMenu={setMenuIsOpened}
         scrollTo={(element) => scollToElement(element)}
       />
       <Element name="#home">
@@ -138,7 +145,7 @@ const Home: NextPage = () => {
 
       <Footer isMobile={isMobile} scrollToTop={executeScroll} />
 
-      <Menu menuIsOpened={menuIsOpened} />
+      {menuIsOpened && <Menu />}
     </div>
   );
 };

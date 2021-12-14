@@ -6,7 +6,7 @@ import Column from "../../assets/Bulma/Column";
 import { useMediaQuery } from "react-responsive";
 import { useRouter } from "next/dist/client/router";
 
-const Menu = (props) => {
+const Menu = () => {
   const menuItems = [];
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [displayMenu, setDisplayMenu] = useState(false);
@@ -25,38 +25,28 @@ const Menu = (props) => {
   }
 
   fillMenu();
-
-  useEffect(() => {
-    setDisplayMenu(props.menuIsOpened);
-  }, [props.menuIsOpened]);
   return (
-    <>
-      {displayMenu ? (
-        <div className="green-background">
-          <div className="menu-header-wrapper">
-            <div className="menu-header">
-              <Logo imgSource="images/white-logo.svg" />
-              <h1 className="menu-header-title">LunchMeny</h1>
-              <button className="pdf-download">
-                <AiOutlineDownload />
-                Download PDF
-              </button>
-            </div>
-          </div>
-          {console.log(displayMenu)}
-          <div className="restaurant-menu-content">
-            <h2 className="lunch-category"> Lunch category 01</h2>
-            <div className="regular-menu">
-              {menuItems.map((menuItem, k) => (
-                <MenuCard menuItem={menuItem} key={k} />
-              ))}
-            </div>
-          </div>
+    <div className="green-background">
+      <div className="menu-header-wrapper">
+        <div className="menu-header">
+          <Logo imgSource="images/white-logo.svg" />
+          <h1 className="menu-header-title">LunchMeny</h1>
+          <button className="pdf-download">
+            <AiOutlineDownload />
+            <span>Download PDF</span>
+          </button>
         </div>
-      ) : (
-        ""
-      )}
-    </>
+      </div>
+      {console.log(displayMenu)}
+      <div className="restaurant-menu-content">
+        <h2 className="lunch-category"> Lunch category 01</h2>
+        <div className="regular-menu">
+          {menuItems.map((menuItem, k) => (
+            <MenuCard menuItem={menuItem} key={k} />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
 
