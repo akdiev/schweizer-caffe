@@ -1,21 +1,33 @@
 .green-background {
   background-color: #0a301c;
+  width: 100%;
+}
+
+.menu-header-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .menu-header {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 50px;
-  margin: 0 100px;
+  padding: 20px 50px;
   border-bottom: 1px solid #ffffff;
 }
 
+.restaurant-menu-content {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  align-content: center;
+}
 .pdf-download {
   background-color: #ca9f68;
-  padding: 4px 8px;
+  padding: 8px 16px;
   border-color: transparent;
 }
 
@@ -29,5 +41,74 @@
 @media only screen and (max-width: 480px) {
   .menu-header {
     margin: 0px;
+  }
+}
+
+.regular-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 24px;
+}
+
+.menu-card-item {
+  width: 20%;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-mealName {
+  font-family: Vidaloka;
+  font-size: 22px;
+  line-height: 24px;
+
+  letter-spacing: 0.5px;
+  color: #ffff;
+}
+
+.lunch-category {
+  font-family: Vidaloka;
+  font-size: 32px;
+  line-height: 39px;
+
+  letter-spacing: 0.5px;
+  color: #ffff;
+  margin: 3% 7.5%;
+}
+
+.category-and-menu {
+  padding: 0 56px 56px 56px;
+  margin: 0 56px;
+}
+.menu-price {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  color: #ca9f68;
+  display: flex;
+  flex-direction: row;
+}
+
+.menuItem-description {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 22px;
+
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.menu-card-item {
+  .name-and-price {
+    padding-top: 24px;
+  }
+  .menuItem-description {
+    padding-bottom: 16px;
   }
 }

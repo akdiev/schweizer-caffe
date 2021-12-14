@@ -110,12 +110,10 @@ const Home: NextPage = () => {
     topRef.current.scrollIntoView();
   };
 
-  // useEffect(() =
-
   return (
     <div ref={topRef} className="fullpage">
-      <Navbar scrollTo={(element) => scollToElement(element)} />
-      <Element name="#home">
+      {/* <Navbar scrollTo={(element) => scollToElement(element)} /> */}
+      {/* <Element name="#home">
         <Hero profile={profile} />
       </Element>
       <Element name="#restaurant">
@@ -133,9 +131,9 @@ const Home: NextPage = () => {
       </Element>
       <ContactUs />
 
-      <Footer isMobile={isMobile} scrollToTop={executeScroll} />
+      <Footer isMobile={isMobile} scrollToTop={executeScroll} /> */}
 
-      {/* <Menu /> */}
+      <Menu />
     </div>
   );
 };

@@ -43,6 +43,10 @@
   width: 300px;
   background-color: #ffffff;
   margin-right: 24px;
+  img {
+    height: 180px;
+    width: auto;
+  }
 }
 
 .title-event-time-container {
@@ -238,6 +242,11 @@
 .events-gallery-picture {
   width: 150px;
   height: 100px;
+  width: 100px;
+}
+.events-gallery-picture {
+  width: 100px;
+  height: 100px;
 }
 
 .events-gallery {
@@ -250,7 +259,7 @@
   display: flex;
   flex-direction: row;
   img {
-    height: 200px;
-    width: 300px;
+    height: 270px;
+    width: 432px;
   }
 }

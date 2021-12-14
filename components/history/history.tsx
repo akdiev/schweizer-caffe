@@ -6,7 +6,11 @@ import Column from "../../assets/Bulma/Column";
 import Columns from "../../assets/Bulma/Columns";
 
 const History = ({ images }) => {
-  const historyImages = makeSingleArray(images);
+  const historyImages = [
+    "images/history-first-image.jpg",
+    "images/history-second-image.jpg",
+    "images/history-third-image.jpg",
+  ];
   const [currentActive, setCurrentActive] = React.useState(1);
 
   const reviewsPerPage = 3;
@@ -129,7 +133,7 @@ const History = ({ images }) => {
           <span className="yellow-circle"></span>
           <div className="columns columns-direction">
             <Column xl={6} xs={12}>
-              <Imgix className="mobile-img" src={historyImages[0]} />
+              <img className="mobile-img" src={historyImages[0]} />
             </Column>
             <Column xl={6} xs={12}>
               <div className="history-card-right-side">
@@ -149,7 +153,7 @@ const History = ({ images }) => {
           <span className="yellow-circle"></span>
           <div className="columns">
             <Column xl={6} xs={12}>
-              <Imgix className="mobile-img" src={historyImages[0]} />
+              <img className="mobile-img" src={historyImages[1]} />
             </Column>
             <Column xl={6} xs={12}>
               <div className="history-card-right-side">
@@ -169,7 +173,7 @@ const History = ({ images }) => {
           <span className="yellow-circle"></span>
           <div className="columns">
             <Column xl={6} xs={12}>
-              <Imgix className="mobile-img" src={historyImages[0]} />
+              <img className="mobile-img" src={historyImages[2]} />
             </Column>
             <Column xl={6} xs={12}>
               <div className="history-card-right-side">
