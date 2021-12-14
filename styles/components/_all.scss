@@ -1,0 +1,30 @@
+@import "./navbar";
+@import "./footer";
+@import "./events";
+@import "./gallery";
+@import "./hero";
+@import "_contact.scss";
+@import "./about-us";
+@import "./history.scss";
+@import "./menu.scss";
+
+.fullpage {
+  width: 100vw;
+}
+
+.pagination-dot {
+  margin: 3px;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #fff;
+  opacity: 0.24;
+  cursor: pointer;
+
+  &.active-page {
+    opacity: 1;
+    width: 12px;
+    height: 12px;
+  }
+}

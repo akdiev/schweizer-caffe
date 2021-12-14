@@ -1,0 +1,256 @@
+.events-container {
+  display: flex;
+  width: 100%;
+  height: min-content;
+  background-color: #0a301c;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 87px 20px;
+  -webkit-scrollbar {
+    display: none;
+  }
+}
+
+.event-header {
+  font-family: Vidaloka;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 48px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.event-subheader {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+
+  text-align: center;
+
+  color: #9eb1a7;
+  margin-bottom: 24px;
+}
+
+.event-card-container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 500px;
+  width: 300px;
+  background-color: #ffffff;
+  margin-right: 24px;
+}
+
+.title-event-time-container {
+  padding: 16px 20px 20px 20px;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.title {
+  font-family: Vidaloka;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #39312a;
+}
+
+.event-time {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+
+  color: #39312a;
+}
+
+.description {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(57, 49, 42, 0.7);
+  margin-bottom: 16px;
+}
+
+.margin-bot-28 {
+  margin-bottom: 28px;
+}
+
+.full-width {
+  width: 100%;
+}
+.description-and-menu-button {
+  margin: 16px 20px;
+}
+
+.events-gallery {
+  display: flex;
+  flex-direction: row;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.event-list {
+  display: flex;
+  flex-direction: row;
+}
+
+// DINOOO
+
+.events-container::-webkit-scrollbar {
+  display: none;
+}
+
+.events-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.events {
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 80px;
+  position: relative;
+  -webkit-scrollbar {
+    display: none !important;
+  }
+
+  @include touch {
+    margin-bottom: 40px;
+    margin-top: 8rem;
+  }
+
+  &-container {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    .events-subcontainer {
+      display: flex;
+
+      @include touch {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+    @media only screen and (max-width: 1350px) {
+      overflow-x: scroll;
+      overflow-y: hidden;
+
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      .pagination {
+        margin: 24px auto 48px auto;
+      }
+    }
+
+    @media only screen and (max-width: 900px) {
+      padding: 0 !important;
+      .event-header {
+        padding-top: 2rem;
+      }
+    }
+
+    .card {
+      height: auto;
+      width: 25%;
+      min-width: 270px;
+
+      &-header {
+        min-height: 110px;
+      }
+
+      &-footer-item {
+        font-size: 16px;
+      }
+
+      &-content-description {
+        color: rgba(#fff, 0.7);
+        min-height: 120px;
+      }
+    }
+
+    .card:not(:last-child) {
+      margin-right: 24px;
+    }
+  }
+
+  @include touch {
+    margin-top: 48px;
+
+    &-title {
+      font-size: 32px;
+    }
+  }
+
+  .event-time {
+    color: #fff;
+    font-family: $family-secondary;
+  }
+
+  .pagination {
+    margin: 24px auto;
+    min-width: 200px;
+    max-width: 210px;
+    display: flex;
+    align-items: center;
+    margin-top: 25px !important;
+
+    &-back {
+      margin-right: 24px;
+    }
+
+    &-forward {
+      margin-left: 24px;
+    }
+  }
+
+  &-decor {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    &-left {
+      left: 24px;
+    }
+
+    &-right {
+      right: 24px;
+    }
+
+    @media only screen and (max-width: 1570px) {
+      display: none;
+    }
+  }
+}
+
+.events-gallery-picture {
+  width: 150px;
+  height: 100px;
+}
+
+.events-gallery {
+  display: flex;
+  flex-direction: column;
+  overflow-x: scroll;
+}
+
+.gallery-row {
+  display: flex;
+  flex-direction: row;
+  img {
+    height: 200px;
+    width: 300px;
+  }
+}

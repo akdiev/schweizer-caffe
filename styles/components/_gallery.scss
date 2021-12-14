@@ -1,0 +1,159 @@
+.main-gallery {
+  position: relative;
+  height: 270px;
+
+  display: flex;
+  justify-content: center;
+
+  @include touch {
+    height: 300px;
+    margin-top: 0px;
+  }
+
+  .gallery {
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  }
+
+  .gallery-slide {
+    max-height: 270px;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    display: flex;
+
+    overflow: hidden;
+
+    @include desktop {
+      min-width: 1000px;
+    }
+
+    @include touch {
+      display: flex;
+      overflow-x: scroll;
+      overflow-y: hidden;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+
+    .single-image-grid {
+      grid-area: 1 / 1 / 3 / 3;
+    }
+
+    .double-image-grid {
+      &.image-1 {
+        grid-area: 1 / 1 / 3 / 2;
+      }
+
+      &.image-2 {
+        grid-area: 1 / 2 / 3 / 3;
+      }
+    }
+
+    .triple-image-grid {
+      &.image-1 {
+        grid-area: 1 / 1 / 3 / 2;
+      }
+
+      &.image-2 {
+        grid-area: 1 / 2 / 2 / 3;
+      }
+
+      &.image-3 {
+        grid-area: 2 / 2 / 3 / 3;
+      }
+    }
+
+    &.is-previous,
+    &.is-next {
+      opacity: 0.35;
+    }
+  }
+
+  &-container {
+    @include touch {
+      display: flex;
+
+      overflow-x: scroll;
+      overflow-y: hidden;
+
+      margin-left: 16px;
+      margin-right: 16px;
+
+      img {
+        width: 168px;
+        object-fit: cover;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) and (max-width: 1279px) {
+      min-width: 1024px;
+    }
+
+    @media only screen and (min-width: 1280px) and (max-width: 1400px) {
+      width: 1320px;
+      min-width: 1280px;
+    }
+
+    @media only screen and (min-width: 1401px) {
+      min-width: 1400px;
+    }
+  }
+}
+
+.scroll-gallery {
+  margin-bottom: 60px;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  img {
+    width: 432px;
+    height: 270px;
+  }
+
+  @include mobile {
+    img {
+      width: 168px;
+      height: 220px;
+    }
+  }
+}
+
+.slider-arrow {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  background-color: rgba(#fff, 0.4);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 9999px;
+
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &-forward {
+    right: 5%;
+  }
+
+  &-back {
+    left: 5%;
+  }
+}

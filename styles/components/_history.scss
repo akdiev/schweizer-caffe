@@ -1,0 +1,219 @@
+.history-card-headline {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+.history-card-year {
+  font-family: Vidaloka;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 39px;
+
+  color: #ffffff;
+}
+
+.history-card-text {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+
+  color: #9eb1a7;
+}
+
+.history-card {
+  height: 240px;
+  width: 850px;
+  .columns {
+    height: 100%;
+  }
+
+  img {
+    height: 100%;
+    width: 430px;
+  }
+}
+
+@media only screen and (max-width: 867px) {
+  .mobile-img {
+    height: 200px !important;
+    width: 100% !important;
+  }
+  .columns-direction {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .history-card {
+    height: unset !important;
+    width: unset !important;
+  }
+
+  .cards {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .history-card-right-side {
+    padding-bottom: 1.5rem;
+    margin-left: 0 !important;
+  }
+}
+
+.gold-line {
+  height: 3px;
+  background-color: #ca9f68;
+  border-radius: 30px;
+  width: 61px;
+  margin-bottom: 44px;
+}
+
+.history-card-right-side {
+  margin-left: 24px;
+  text-align: left;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cards {
+  padding-left: 30px;
+  border-left: 1px solid;
+  border-image: linear-gradient(to top, white, rgba(0, 0, 0, 0)) 1 100%;
+  position: relative;
+}
+
+.horizontal-line-history {
+  background: #446855;
+}
+
+.pad-bot-0 {
+  padding: 0.75rem 0.75rem 0 0.75rem;
+}
+
+.yellow-circle {
+  height: 16px;
+  width: 16px;
+  background: #caab2a;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  transform: rotate(-90deg);
+  position: absolute;
+  left: -9px;
+  border-radius: 100px;
+  transform: translateY(11px);
+}
+
+.review-card-container {
+  position: relative;
+  background-color: #ffffff;
+  height: 550px;
+  padding: 32px 32px;
+  margin-right: 24px;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.reviews {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #446855;
+  margin-top: 80px;
+  padding-top: 80px;
+  width: 90%;
+  margin-bottom: 36px;
+}
+
+@media only screen and(max-width: 876px) {
+  .reviews {
+    .columns {
+      overflow-x: scroll;
+      display: flex;
+    }
+  }
+  .review-card-container {
+    height: 620px;
+    margin-bottom: 2rem;
+  }
+
+  .author-box {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 1rem;
+  }
+}
+
+.author-picture {
+  display: flex;
+  height: 56px;
+  width: 56px;
+  border-radius: 100px;
+}
+
+.author-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.review-text {
+  height: 280px;
+}
+
+.author-name {
+  margin-left: 16px;
+}
+
+.header-fullname {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.subheader-fullname {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 28px;
+  color: #39312a;
+}
+
+.short-bold-line {
+  width: 20%;
+  height: 3px;
+  background: #39312a;
+  border-radius: 30px;
+}
+
+.review-title {
+  font-family: Vidaloka;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 39px;
+  color: #39312a;
+}
+
+.reviews {
+  .review-card-container:last-child {
+    margin-right: 0px;
+  }
+}
+
+.review-rating {
+  margin-left: 13px;
+}
+
+.random {
+  color: green;
+}

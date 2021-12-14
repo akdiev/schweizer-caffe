@@ -8,9 +8,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.24.0",
+    "bulma": "^0.9.3",
+    "formik": "^2.2.9",
     "next": "12.0.7",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-icons": "^4.3.1",
+    "react-imgix": "^9.3.0",
+    "react-responsive": "^9.0.0-beta.5",
+    "react-scroll": "^1.8.4",
+    "sass": "^1.44.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/node": "16.11.12",

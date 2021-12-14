@@ -1,0 +1,135 @@
+.footer {
+  position: inherit;
+  height: 200px;
+  bottom: 0px;
+  width: 100%;
+  background: #12100e;
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+
+.middle-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-evenly;
+  margin-left: 130px;
+}
+.guestie-button {
+  background: #ffffff;
+  border: 1.08352px solid #ca9f68;
+  box-sizing: border-box;
+  border-radius: 47.3846px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 18px 0px;
+  padding: 12px 24px;
+}
+
+.gray-text-guest {
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: right;
+  letter-spacing: 0.04em;
+  color: #8c8c8c;
+  margin-top: 10px;
+}
+
+.scroll-to-top {
+  display: flex;
+  width: 26px;
+  height: 26px;
+  background: #ca9f68;
+  justify-content: center;
+  border-radius: 100px;
+  cursor: pointer;
+  .arrow-up-icon {
+    fill: #ffffff;
+    width: 30px;
+    height: 26px;
+  }
+}
+
+.instagram-icon {
+  height: 32px;
+  width: 32px;
+  color: #ca9f68;
+  margin-right: 40px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.copyright-text {
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  margin-top: 14px;
+
+  color: #8c8c8c;
+}
+
+@media only screen and (max-width: 480px) {
+  .footer {
+    height: 400px;
+    padding: 60px;
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+  }
+  .scroll-to-top {
+    align-self: center;
+    margin-bottom: 30px;
+  }
+
+  .gray-text-guest {
+    font-size: 11px;
+  }
+
+  .middle-footer {
+    margin-left: 0;
+    img {
+      height: 100px;
+    }
+  }
+
+  // .middle-footer {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   justify-items: center;
+  //   margin-left: 250px;
+  // }
+
+  .icons {
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.footer-mobile-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  img {
+    height: 100px;
+  }
+}
