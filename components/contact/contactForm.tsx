@@ -122,7 +122,9 @@ const ContactForm = () => {
           value={data.message}
           onChange={handleChange}
         ></textarea>
-        <button className="menu-button full-width">SUBMIT MESSAGE</button>
+        <button className="menu-button full-width button-center">
+          SUBMIT MESSAGE
+        </button>
       </form>
     </div>
   );

@@ -32,7 +32,6 @@
   font-weight: bold;
   font-size: 14px;
   line-height: 100%;
-  text-align: center;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #ffffff;
@@ -44,7 +43,6 @@
   font-weight: 500;
   font-size: 40px;
   line-height: 100%;
-  text-align: center;
 
   color: #ca9f68;
   margin-top: 12px;
@@ -174,4 +172,28 @@
 
 .box:not(:last-child) {
   margin-bottom: 0px;
+}
+
+.input,
+.textarea {
+  border-radius: 0;
+}
+
+.button-center {
+  display: flex;
+  justify-content: center;
+}
+
+@include desktop {
+  .contact-us-container {
+    width: max-content;
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  .contact-us {
+    .column {
+      margin-right: 16px;
+    }
+  }
 }

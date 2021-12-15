@@ -8,6 +8,7 @@
   right: 0;
   z-index: 999999;
   overflow-y: auto;
+  padding: 50px 100px 80px 100px;
 }
 
 .green-background::-webkit-scrollbar {
@@ -26,8 +27,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 50px;
+  padding: 40px 50px;
   border-bottom: 1px solid #ffffff;
+  .logo-component {
+    width: 300px;
+  }
 }
 
 .restaurant-menu-content {
@@ -38,7 +42,7 @@
 }
 .pdf-download {
   background-color: #ca9f68;
-  padding: 8px 16px;
+  padding: 16px 16px;
   border-color: transparent;
   display: flex;
   flex-direction: row;
@@ -55,6 +59,14 @@
   color: #fff;
 }
 
+.name-and-price {
+  padding-top: 24px;
+  .columns {
+    display: flex;
+    align-items: center;
+  }
+}
+
 @media only screen and (max-width: 480px) {
   .menu-header {
     margin: 0px;
@@ -66,8 +78,10 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  grid-column-gap: 24px;
+  -webkit-column-gap: 24px;
   column-gap: 24px;
+  justify-content: center;
 }
 
 .menu-card-item {
@@ -75,6 +89,7 @@
   height: min-content;
   display: flex;
   flex-direction: column;
+  margin-bottom: 40px;
 }
 
 .menu-mealName {
@@ -93,7 +108,8 @@
 
   letter-spacing: 0.5px;
   color: #ffff;
-  margin: 3% 7.5%;
+  margin-bottom: 56px;
+  margin-left: 7.5%;
 }
 
 .category-and-menu {
@@ -136,19 +152,26 @@
 
 .close-modal-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 32px;
-  height: 32px;
+  top: 100px;
+  right: 50px;
+  width: 60px;
+  height: 60px;
   background-color: white;
   border-radius: 99px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  svg {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
+  .green-background {
+    padding: 0;
+  }
   .mobile-header {
     img {
       width: 250px;
@@ -158,9 +181,14 @@
   }
   .close-modal-button {
     top: 29px;
+    right: 15px;
     height: 40px;
     width: 40px;
     position: fixed;
+    svg {
+      width: 16px;
+      height: 16px;
+    }
   }
   .menu-header-title {
     font-size: 32px;
@@ -169,7 +197,7 @@
   .menu-header {
     width: 100%;
     padding: 20px 0 20px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .pdf-download {
@@ -182,7 +210,8 @@
   }
 
   .lunch-category {
-    margin: 3% 3.5%;
+    margin-bottom: 32px;
+    margin-left: 4%;
   }
 
   .menu-card-item {
@@ -193,4 +222,22 @@
       width: 100%;
     }
   }
+
+  .restaurant-items-container {
+    padding: 32px 0 !important;
+  }
+}
+
+.restaurant-items-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 50px 50px 50px;
+}
+
+.menu-card-image {
+  width: 100%;
+  height: auto;
 }

@@ -45,6 +45,14 @@
   }
 }
 
+.gold-line {
+  height: 3px;
+  background-color: #ca9f68;
+  border-radius: 30px;
+  width: 61px;
+  margin-bottom: 24px;
+}
+
 @media only screen and (max-width: 867px) {
   .mobile-img {
     height: 200px !important;
@@ -68,20 +76,19 @@
     padding-bottom: 1.5rem;
     margin-left: 0 !important;
   }
+  .event-subheader {
+    margin-bottom: 0;
+    padding: 0 20px;
+  }
+  .gold-line {
+    margin-bottom: 8px;
+  }
 }
 
 .white-border {
   background-color: white;
   border-radius: 999px;
   border-style: none;
-}
-
-.gold-line {
-  height: 3px;
-  background-color: #ca9f68;
-  border-radius: 30px;
-  width: 61px;
-  margin-bottom: 44px;
 }
 
 .history-card-right-side {
@@ -124,7 +131,7 @@
 .review-card-container {
   position: relative;
   background-color: #ffffff;
-  height: 550px;
+  height: 650px;
   padding: 32px 32px;
   margin-right: 24px;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
@@ -138,9 +145,14 @@
   padding-top: 80px;
   width: 90%;
   margin-bottom: 36px;
+  @include desktop {
+    .columns {
+      justify-content: center;
+    }
+  }
 }
 
-@media only screen and(max-width: 876px) {
+@media only screen and(max-width: 480px) {
   .reviews {
     .columns {
       overflow-x: scroll;
@@ -148,7 +160,7 @@
     }
   }
   .review-card-container {
-    height: 620px;
+    height: 660px;
     margin-bottom: 2rem;
   }
 
@@ -172,8 +184,21 @@
   align-items: center;
 }
 
+.author-box {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 1rem;
+}
+
 .review-text {
   height: 280px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 28px;
+
+  color: #39312a;
 }
 
 .author-name {
@@ -225,4 +250,10 @@
 
 .random {
   color: green;
+}
+
+.last-card {
+  .column {
+    padding-bottom: 0;
+  }
 }

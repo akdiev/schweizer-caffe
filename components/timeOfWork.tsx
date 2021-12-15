@@ -14,7 +14,7 @@ const TimeOfWork = ({ workTime }) => {
     <div className={`time-of-work dropdown is-right ${active && "is-active"}`}>
       <div className="dropdown-trigger">
         <button
-          className="menu-button width-200"
+          className="menu-button"
           aria-haspopup="true"
           aria-controls="dropdown-menu2"
           onClick={() => setActive(!active)}
@@ -25,7 +25,7 @@ const TimeOfWork = ({ workTime }) => {
               : "Enligt överenskommelse"}
           </span>
           {formattedWorkTime && (
-            <span className="icon is-small ml-3">
+            <span className="icon-24">
               <img
                 src="/images/icons/chevron-down-circle.svg"
                 alt="Arrow down"
@@ -73,9 +73,12 @@ const TimeOfWork = ({ workTime }) => {
             </div>
             <hr className="dropdown-divider" />
             <div className="dropdown-item">
-              <p className="time-of-work-title has-font-14">
+              <div className="time-of-work-title has-font-14 align-left">
+                <span className="white-caution-circle">
+                  <p className="caution-sign">!</p>
+                </span>
                 AVVIKANDE ÖPPETTIDER
-              </p>
+              </div>
             </div>
             <hr className="dropdown-divider" />
             <div className="time-of-work-footer navbar-item">

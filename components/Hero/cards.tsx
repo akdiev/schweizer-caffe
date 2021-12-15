@@ -46,7 +46,7 @@ const HeroCards = ({ setOrderTakeway, profile }) => {
             whiteCircle={true}
           >
             <p className="title is-5 mb-1">CONTACT</p>
-            <p className="address">+512 4123 5612</p>
+            <p className="address">{profile?.phone}</p>
           </SingleCard>
         </div>
         <div className="column is-3-desktop is-12-mobile is-12-tablet">

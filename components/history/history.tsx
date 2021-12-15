@@ -123,7 +123,7 @@ const History = ({ images }) => {
   };
   return (
     <div className="events-container">
-      <h1 className="event-header">History</h1>
+      <h1 className="event-header">Our History</h1>
       <p className="event-subheader">
         Enim volutpat velit molestie morbi pharetra nam nisi et.
       </p>
@@ -169,7 +169,7 @@ const History = ({ images }) => {
             </Column>
           </div>
         </div>
-        <div className="history-card">
+        <div className="history-card last-card">
           <span className="yellow-circle"></span>
           <div className="columns">
             <Column xl={6} xs={12}>
@@ -259,7 +259,7 @@ const ReviewCard = ({ review, ...props }) => {
     return newArray;
   };
   return (
-    <Column lg={4} xs={11}>
+    <Column lg={3} xs={10}>
       <div className="review-card-container">
         <div className="rating">
           {createStarArray()}

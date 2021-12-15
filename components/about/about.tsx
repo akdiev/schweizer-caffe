@@ -15,7 +15,7 @@ const About = ({ images, ...props }) => {
     <div className="contact-background">
       <div className="about-us-content container">
         <div className="about-us-left">
-          <div>
+          <div className="width-80">
             <p className="about-us-header">ABOUT US</p>
             <h2 className="about-us-headline">Headline goes on this area</h2>
             <p className="about-us-text">

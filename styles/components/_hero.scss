@@ -1,5 +1,5 @@
 .hero {
-  min-height: 850px;
+  min-height: 1000px;
   position: relative;
   width: 100% !important;
   background-position: center center;
@@ -8,7 +8,7 @@
   background-position-y: center;
   background-size: cover;
   background-image: url(../../assets/images/dashboard-background.svg);
-
+  margin-top: 100px;
   @include desktop {
     // margin: 24px 24px 24px 24px;
   }
@@ -57,19 +57,33 @@
     }
 
     .title {
-      font-family: $family-secondary;
+      font-family: Vidaloka;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: left;
+      text-transform: uppercase;
+
+      color: #ffffff;
     }
 
     .address {
-      font-size: 20px;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 18px;
+
+      color: #ffffff;
     }
 
     &-image {
-      width: 58px;
-      height: 58px;
+      width: 46px;
+      height: 46px;
 
-      min-width: 32px;
-      min-height: 32px;
+      min-width: 46px;
+      min-height: 46px;
 
       margin-right: 20px;
       // background-color: white;
@@ -124,7 +138,7 @@
   .cards-container {
     width: 100%;
     position: absolute;
-    bottom: 20px !important;
+    bottom: 40px !important;
 
     @include touch {
       bottom: 15px;
@@ -159,12 +173,65 @@
   flex-direction: column;
 }
 
+// @media only screen and (min-width: 1440px) and (max-width) {
+//   .hero-content {
+//     left: 60%;
+//     margin: auto;
+//   }
+// }
+
 .dropdown-menu {
   background: #ca9f68;
+  top: 58px;
+  width: max-content;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.14);
+  border-radius: 8px;
 }
 
 .dropdown-item {
+  display: flex;
   background: #ca9f68;
+  justify-content: space-between;
+  .time-of-work-title {
+    font-family: Vidaloka;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #39312a;
+    margin-left: 10px;
+    padding: 0 16px;
+  }
+  .weekday {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    color: #39312a;
+  }
+  .worktime {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #39312a;
+  }
+
+  .time-of-work-footer {
+    p {
+      font-family: Vidaloka;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: #39312a;
+    }
+  }
 }
 
 .dropdown-divier {
@@ -190,5 +257,74 @@
   .headline {
     font-size: 52px;
     line-height: 53px;
+  }
+}
+
+.hero-feature {
+  border-radius: 32px;
+  border-style: none;
+  text-align: center;
+  background-color: #fff;
+  padding: 8px 16px;
+  width: min-content;
+  font-family: MontSerrat;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #39312a;
+}
+.white-caution-circle {
+  margin-right: 5px;
+  width: 16px;
+  height: 16px;
+  background: #ffffff;
+  padding-bottom: 16px;
+  border-radius: 40px;
+}
+
+.caution-sign {
+  color: #ca9f68;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 2px;
+}
+
+.time-of-work-title {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon-24 {
+  margin-left: 8px;
+  width: 24px;
+  height: 24px;
+}
+
+.basket-icon {
+  margin-top: 3px;
+}
+
+.align-left {
+  display: flex;
+  justify-content: left;
+  margin-left: 0 !important;
+  padding: 0 !important;
+  text-align: left;
+}
+
+@media only screen and (min-width: 1580px) and (max-width: 1900px) {
+  .hero-content {
+    left: 53%;
+  }
+}
+@media only screen and (min-width: 1920px) and(max-width: 2500px) {
+  .hero-content {
+    left: 60%;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .hero-content {
+    left: 69%;
   }
 }

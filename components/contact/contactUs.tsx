@@ -9,13 +9,13 @@ export default function ContactUs() {
         <div className="columns">
           <div className="column">
             <div className="contact-us-info">
-              <p className="title white is-5 font-secondary has-text-weight-bold mb-2">
+              <p className="contact-us-text has-text-weight-bold mb-2">
                 CONTACT US
               </p>
-              <p className="title orange is-3 has-text-primary mb-3">
+              <p className="get-in-touch orange is-3 has-text-primary mb-3">
                 Get in touch!
               </p>
-              <p className="caption mb-4">
+              <p className="contact-subtext mb-4">
                 Fill in a form and contact us at any time. Our support team is
                 always there for you! 👋
               </p>

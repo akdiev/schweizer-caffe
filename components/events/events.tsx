@@ -9,6 +9,7 @@ interface EventCard {
   eventTime?: string;
   description?: string;
   menuUrl?: string;
+  lasMer?: boolean;
 }
 
 const RestaurantEvents = () => {
@@ -55,6 +56,7 @@ const RestaurantEvents = () => {
       description:
         "Sit pellentesque a at eros, nisl etiam. Nec, porttitor turpis vel penatibus dignissim non a mauris. Sed eget ipsum eu ipsum convallis vivamus sed ornare mi urna ne.",
       menuUrl: "test",
+      lasMer: true,
     },
     {
       id: 3,
@@ -217,12 +219,24 @@ const EventMenuCard = ({ content, ...props }) => {
         <div>
           <div className="description-and-menu-button">
             <p className="description">{content.description}</p>
-            <button
-              className="menu-button margin-bot-28 full-width"
-              onClick={() => router.push(content.menuUrl)}
-            >
-              VISA MENY
-            </button>
+            {!content.lasMer ? (
+              <button
+                className="menu-button margin-bot-28 full-width"
+                onClick={() => router.push(content.menuUrl)}
+              >
+                VISA MENY
+              </button>
+            ) : (
+              <div className="event-buttons margin-bot-28 full-width">
+                <button className="lasmer-button">LAS MER</button>
+                <button
+                  className="menu-button"
+                  onClick={() => router.push(content.menuUrl)}
+                >
+                  VISA MENY
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

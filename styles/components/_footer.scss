@@ -18,7 +18,6 @@
   align-items: center;
   justify-items: center;
   justify-content: space-evenly;
-  margin-left: 130px;
 }
 .guestie-button {
   background: #ffffff;
@@ -86,7 +85,7 @@
 
 @media only screen and (max-width: 480px) {
   .footer {
-    height: 400px;
+    height: 500px;
     padding: 60px;
     display: flex;
     justify-items: center;
@@ -99,6 +98,11 @@
 
   .gray-text-guest {
     font-size: 11px;
+    width: max-content;
+  }
+
+  .copyright-text {
+    width: max-content;
   }
 
   .middle-footer {
@@ -131,5 +135,14 @@
 .footer-logo {
   img {
     height: 100px;
+  }
+}
+
+@include desktop {
+  .footer-subcontainer {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    justify-content: space-between;
   }
 }

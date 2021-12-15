@@ -14,7 +14,6 @@ import { useMediaQuery } from "react-responsive";
 import ContactUs from "../components/contact/contactUs";
 import EventsGallery from "../components/events/eventsGallery";
 import Menu from "../components/menu/menu";
-// import { getStaticProps } from "../utils/services";
 import axios from "axios";
 
 function Home({ data }) {
@@ -47,9 +46,6 @@ function Home({ data }) {
     ],
   ];
 
-  // useEffect(() => {
-  //   getStaticProps(null).then((data) => (profile = data.props.data));
-  // }, []);
   useEffect(() => {
     if (menuIsOpened) {
       document.querySelector("html").classList.add("is-clipped");
@@ -70,7 +66,7 @@ function Home({ data }) {
         profile={profile}
         scrollTo={(element) => scollToElement(element)}
       />
-      <Element name="#home">
+      <Element className="background-margin" name="#home">
         <Hero profile={profile} />
       </Element>
       <Element name="#restaurant">

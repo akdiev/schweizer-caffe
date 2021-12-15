@@ -47,11 +47,10 @@ const Navbar = (props) => {
 
   if (navbar) {
     if (navbarActive) {
-      mobileNavbarClasses += "is-dark";
+      mobileNavbarClasses += "not-on-top";
     } else mobileNavbarClasses += "not-on-top";
   } else {
-    if (navbarActive) mobileNavbarClasses += "is-dark";
-    else mobileNavbarClasses += "is-transparent";
+    if (navbarActive) mobileNavbarClasses += "not-on-top";
   }
   const handleClick = (href) => {
     props.scrollTo(href);
@@ -60,7 +59,7 @@ const Navbar = (props) => {
 
   return (
     <>
-      <div className={`nav is-hidden-touch ${navbar && "not-on-top"}`}>
+      <div className="nav is-hidden-touch not-on-top">
         <div className="nav-container container">
           <Logo imgSource="images/logo.svg" />
           <div className="nav-section">
@@ -79,7 +78,7 @@ const Navbar = (props) => {
         </div>
       </div>
       <div
-        className={`navbar is-fixed-top ${mobileNavbarClasses} is-hidden-desktop`}
+        className={`navbar not-on-top is-fixed-top ${mobileNavbarClasses} is-hidden-desktop`}
       >
         <div className="navbar-brand">
           <a className="navbar-item" onClick={() => handleClick("#home")}>

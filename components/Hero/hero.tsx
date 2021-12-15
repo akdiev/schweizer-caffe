@@ -13,12 +13,13 @@ const Hero = ({ profile }) => {
     <>
       <div id="home" className="hero">
         <div className="hero-content">
+          <p className="hero-feature">Feature</p>
           <h1 className="headline">Headline goes</h1>
           <h1 className="headline">on this area</h1>
           <p className="subheadline">
-            Ac, est lacus iaculis fringilla senectus elementum. Euismod felis
-            adipiscing porta velit.
+            Ac, est lacus iaculis fringilla senectus elementum.
           </p>
+          <p className="subheadline">Euismod felis adipiscing porta velit.</p>
         </div>
         <div className="hero-dots is-hidden-touch">
           <span
