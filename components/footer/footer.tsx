@@ -16,9 +16,9 @@ const Footer = ({ ...props }) => {
                 <IoMdArrowDropup className="arrow-up-icon" />
               </span>
               <div className="middle-footer">
-                <a href="#home">
+                <span onClick={() => router.push("schweizer.se")}>
                   <Logo imgSource="images/footer-logo.svg" />
-                </a>
+                </span>
                 <div className="social-footer">
                   <div className="icons">
                     <a href="instagram.com>">

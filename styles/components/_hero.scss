@@ -1,5 +1,5 @@
 .hero {
-  min-height: 1000px;
+  min-height: 900px;
   position: relative;
   width: 100% !important;
   background-position: center center;
@@ -8,10 +8,6 @@
   background-position-y: center;
   background-size: cover;
   background-image: url(../../assets/images/dashboard-background.svg);
-  margin-top: 100px;
-  @include desktop {
-    // margin: 24px 24px 24px 24px;
-  }
 
   &-content {
     text-align: center;

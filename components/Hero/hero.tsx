@@ -21,26 +21,6 @@ const Hero = ({ profile }) => {
           </p>
           <p className="subheadline">Euismod felis adipiscing porta velit.</p>
         </div>
-        <div className="hero-dots is-hidden-touch">
-          <span
-            onClick={() => handleDotClick("saluhallen")}
-            className={`hero-dots-dot ${
-              activeHero === "saluhallen" ? "is-active" : ""
-            }`}
-          ></span>
-          <span
-            onClick={() => handleDotClick("sigurdsgatan")}
-            className={`hero-dots-dot ${
-              activeHero === "sigurdsgatan" ? "is-active" : ""
-            }`}
-          ></span>
-          <span
-            onClick={() => handleDotClick("foodtruck")}
-            className={`hero-dots-dot ${
-              activeHero === "foodtruck" ? "is-active" : ""
-            }`}
-          ></span>
-        </div>
         <div className="cards-container">
           <div className="container">
             <HeroCards profile={profile} setOrderTakeway={setOrderTakeway} />
