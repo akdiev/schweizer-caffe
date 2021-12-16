@@ -18,7 +18,7 @@
   width: 75%;
   flex-direction: column;
   justify-content: center;
-  padding: 40px 100px;
+  padding: 40px 0px;
   @include touch {
     width: 100%;
     padding: 0;
@@ -61,7 +61,6 @@
 .about-us-content {
   display: flex;
   align-items: center;
-  margin: 150px 100px 130px;
   @include touch {
     flex-direction: column;
     margin: 50px 16px 60px;
@@ -105,7 +104,7 @@
       margin-left: 10px;
       img {
         height: 40%;
-        width: 95%;
+        width: 100%;
       }
       img:not(:last-child) {
         margin-bottom: 17px;

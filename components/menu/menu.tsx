@@ -26,40 +26,42 @@ const Menu = (props) => {
   fillMenu();
   return (
     <div className="green-background">
-      <span className="close-modal-button" onClick={() => props.closeModal()}>
-        <AiOutlineClose />
-      </span>
-      {isMobile ? (
-        <div className="mobile-header">
-          <Logo imgSource="images/white-logo.svg" />
-          <div className="menu-header">
-            <h1 className="menu-header-title">LunchMeny</h1>
-            <button className="pdf-download">
-              <AiOutlineDownload />
-              <span>Download PDF</span>
-            </button>
-          </div>
-        </div>
-      ) : (
-        <div className="menu-header-wrapper">
-          <div className="menu-header">
+      <div className="container">
+        <span className="close-modal-button" onClick={() => props.closeModal()}>
+          <AiOutlineClose />
+        </span>
+        {isMobile ? (
+          <div className="mobile-header">
             <Logo imgSource="images/white-logo.svg" />
-            <h1 className="menu-header-title">LunchMeny</h1>
-            <button className="pdf-download">
-              <AiOutlineDownload />
-              <span>Download PDF</span>
-            </button>
+            <div className="menu-header">
+              <h1 className="menu-header-title">LunchMeny</h1>
+              <button className="pdf-download">
+                <AiOutlineDownload />
+                <span>Download PDF</span>
+              </button>
+            </div>
           </div>
-        </div>
-      )}
+        ) : (
+          <div className="menu-header-wrapper">
+            <div className="menu-header">
+              <Logo imgSource="images/white-logo.svg" />
+              <h1 className="menu-header-title">LunchMeny</h1>
+              <button className="pdf-download">
+                <AiOutlineDownload />
+                <span>Download PDF</span>
+              </button>
+            </div>
+          </div>
+        )}
 
-      <div className="restaurant-items-container">
-        <div className="restaurant-menu-content">
-          <h2 className="lunch-category"> Lunch category 01</h2>
-          <div className="regular-menu">
-            {menuItems.map((menuItem, k) => (
-              <MenuCard menuItem={menuItem} key={k} />
-            ))}
+        <div className="restaurant-items-container container">
+          <div className="restaurant-menu-content">
+            <h2 className="lunch-category"> Lunch category 01</h2>
+            <div className="regular-menu">
+              {menuItems.map((menuItem, k) => (
+                <MenuCard menuItem={menuItem} key={k} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

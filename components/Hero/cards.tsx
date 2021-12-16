@@ -3,10 +3,10 @@ import TimeOfWork from "../timeOfWork";
 import { IoMdBasket } from "react-icons/io";
 
 const SingleCard = (props) => {
-  const { imageSource, children, whiteCircle } = props;
+  const { imageSource, children, whiteCircle, highZindex } = props;
 
   return (
-    <div className="hero-card">
+    <div className={`hero-card ${highZindex ? "high-index" : ""}`}>
       <div className="hero-card-image">
         {}
         <img
@@ -29,7 +29,7 @@ const HeroCards = ({ setOrderTakeway, profile }) => {
     <div className="hero-cards">
       <div className="columns is-desktop">
         <div className="column is-3-desktop is-12-mobile is-12-tablet">
-          <SingleCard imageSource="/images/icons/time.svg">
+          <SingleCard imageSource="/images/icons/time.svg" highZindex={true}>
             <p className="title is-5 mb-1">ÖPPETTIDER</p>
             <TimeOfWork workTime={profile?.working_time} />
           </SingleCard>

@@ -1,10 +1,15 @@
+.footer-background {
+  background: #12100e;
+}
+
 .footer {
   position: inherit;
   height: 200px;
   bottom: 0px;
   width: 100%;
-  background: #12100e;
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+  background: #12100e;
+
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -18,6 +23,7 @@
   align-items: center;
   justify-items: center;
   justify-content: space-evenly;
+  margin-left: 30px;
 }
 .guestie-button {
   background: #ffffff;
@@ -142,7 +148,8 @@
   .footer-subcontainer {
     display: flex;
     flex-direction: row;
-    width: 70%;
+    width: 100%;
     justify-content: space-between;
+    align-items: center;
   }
 }

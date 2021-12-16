@@ -1,6 +1,8 @@
 import React from "react";
 import { useRouter } from "next/dist/client/router";
 import { setEventPages } from "../../utils/helpers";
+import Columns from "../../assets/Bulma/Columns";
+import Column from "../../assets/Bulma/Column";
 
 interface EventCard {
   id: number;
@@ -151,55 +153,57 @@ const RestaurantEvents = () => {
   };
 
   return (
-    <div className="events-container events-wrapper">
-      <h1 className="event-header">Events</h1>
-      <p className="event-subheader">
-        Enim volutpat velit molestie morbi pharetra nam nisi et.
-      </p>
+    <div className="events-green-background">
+      <div className="container events-container ">
+        <h1 className="event-header">Events</h1>
+        <p className="event-subheader">
+          Enim volutpat velit molestie morbi pharetra nam nisi et.
+        </p>
 
-      <hr className="gold-line" />
-      <div className="events-container">
-        <div className="events-subcontainer container">
-          {currentRestaurantEvents
-            .slice(
-              (currentActive - 1) * eventsPerPage,
-              eventsPerPage * currentActive
-            )
-            .map((event, key) => (
-              <EventMenuCard key={key} content={event} />
-            ))}
+        <hr className="gold-line" />
+        <div className="events container">
+          <Columns>
+            {currentRestaurantEvents
+              .slice(
+                (currentActive - 1) * eventsPerPage,
+                eventsPerPage * currentActive
+              )
+              .map((event, key) => (
+                <EventMenuCard key={key} content={event} />
+              ))}
+          </Columns>
         </div>
-      </div>
-      <div className="pagination">
-        {totalEventPages > 1 && (
-          <>
-            {" "}
-            <span
-              onClick={() => handleBack()}
-              className="pagination-back is-clickable"
-            >
-              <img src="/images/icons/icons/circle-left.png" alt="Go back" />
-            </span>
-            {pages.map((page, key) => (
+        <div className="pagination">
+          {totalEventPages > 1 && (
+            <>
+              {" "}
               <span
-                key={key}
-                onClick={(e) => handleClick(e, page)}
-                className={`pagination-dot ${
-                  currentActive === page && "active-page"
-                }`}
-              ></span>
-            ))}
-            <span
-              onClick={() => handleForward()}
-              className="pagination-forward is-clickable"
-            >
-              <img
-                src="/images/icons/icons/circle-right.png"
-                alt="Go forward"
-              />
-            </span>
-          </>
-        )}
+                onClick={() => handleBack()}
+                className="pagination-back is-clickable"
+              >
+                <img src="/images/icons/icons/circle-left.png" alt="Go back" />
+              </span>
+              {pages.map((page, key) => (
+                <span
+                  key={key}
+                  onClick={(e) => handleClick(e, page)}
+                  className={`pagination-dot ${
+                    currentActive === page && "active-page"
+                  }`}
+                ></span>
+              ))}
+              <span
+                onClick={() => handleForward()}
+                className="pagination-forward is-clickable"
+              >
+                <img
+                  src="/images/icons/icons/circle-right.png"
+                  alt="Go forward"
+                />
+              </span>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -208,39 +212,41 @@ const RestaurantEvents = () => {
 const EventMenuCard = ({ content, ...props }) => {
   const router = useRouter();
   return (
-    <div className="event-card-container">
-      {content.image ? <img alt="food" src={content.image}></img> : ""}
+    <Column md={3} lg={3} xs={11}>
+      <div className="event-card-container">
+        {content.image ? <img alt="food" src={content.image}></img> : ""}
 
-      <div>
-        <div className="title-event-time-container">
-          <h1 className="title">{content.title}</h1>
-          <h2 className="event-time">{content.eventTime}</h2>
-        </div>
         <div>
-          <div className="description-and-menu-button">
-            <p className="description">{content.description}</p>
-            {!content.lasMer ? (
-              <button
-                className="menu-button margin-bot-28 full-width"
-                onClick={() => router.push(content.menuUrl)}
-              >
-                VISA MENY
-              </button>
-            ) : (
-              <div className="event-buttons margin-bot-28 full-width">
-                <button className="lasmer-button">LAS MER</button>
+          <div className="title-event-time-container">
+            <h1 className="title">{content.title}</h1>
+            <h2 className="event-time">{content.eventTime}</h2>
+          </div>
+          <div>
+            <div className="description-and-menu-button">
+              <p className="description">{content.description}</p>
+              {!content.lasMer ? (
                 <button
-                  className="menu-button"
+                  className="menu-button margin-bot-28 full-width"
                   onClick={() => router.push(content.menuUrl)}
                 >
                   VISA MENY
                 </button>
-              </div>
-            )}
+              ) : (
+                <div className="event-buttons margin-bot-28 full-width">
+                  <button className="lasmer-button">LAS MER</button>
+                  <button
+                    className="menu-button"
+                    onClick={() => router.push(content.menuUrl)}
+                  >
+                    VISA MENY
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Column>
   );
 };
 

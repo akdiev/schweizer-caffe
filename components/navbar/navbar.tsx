@@ -7,6 +7,7 @@ import {
   IoLogoInstagram,
 } from "react-icons/io5";
 import Logo from "./logo";
+import { AiOutlineClose } from "react-icons/ai";
 
 const navOptions = [
   {
@@ -44,9 +45,11 @@ const Navbar = (props) => {
     window.addEventListener("scroll", changeBackground);
   });
   let mobileNavbarClasses = "";
+  let orangeNavbar = "";
 
   if (navbar) {
     if (navbarActive) {
+      orangeNavbar = "navbar-orange";
       mobileNavbarClasses += "not-on-top";
     } else mobileNavbarClasses += "not-on-top";
   } else {
@@ -80,7 +83,7 @@ const Navbar = (props) => {
       <div
         className={`navbar not-on-top is-fixed-top ${mobileNavbarClasses} is-hidden-desktop`}
       >
-        <div className="navbar-brand">
+        <div className={`navbar-brand ${orangeNavbar}`}>
           <a className="navbar-item" onClick={() => handleClick("#home")}>
             {navbarActive ? (
               <Logo imgSource="images/white-logo.svg" />
@@ -89,18 +92,24 @@ const Navbar = (props) => {
             )}
           </a>
           <div className="menu-and-burger">
-            <button
-              className="menu-button-small"
-              onClick={() => props.openMenu(true)}
-            >
-              VISA MENY{" "}
-            </button>
+            {navbarActive ? (
+              ""
+            ) : (
+              <button
+                className="menu-button-small"
+                onClick={() => props.openMenu(true)}
+              >
+                VISA MENY{" "}
+              </button>
+            )}
+
             <div
               className="navbar-burger"
               data-target="navbarDropdownContent"
               onClick={() => setNavbarActive(!navbarActive)}
             >
-              <NavIcon className={navbarActive ? "open" : ""} />
+              {navbarActive ? <AiOutlineClose /> : <CgMenuRight />}
+              {/* <NavIcon className={navbarActive ? "open" : ""} /> */}
             </div>
           </div>
         </div>

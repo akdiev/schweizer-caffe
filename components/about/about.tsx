@@ -1,8 +1,4 @@
 import React from "react";
-import Column from "../../assets/Bulma/Column";
-import Columns from "../../assets/Bulma/Columns";
-import Imgix from "react-imgix";
-import { makeSingleArray } from "../../utils/helpers";
 
 const About = ({ images, ...props }) => {
   const imagesToShow = [

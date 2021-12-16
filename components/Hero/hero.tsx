@@ -12,7 +12,7 @@ const Hero = ({ profile }) => {
   return (
     <>
       <div id="home" className="hero">
-        <div className="hero-content">
+        <div className="hero-content container">
           <p className="hero-feature">Feature</p>
           <h1 className="headline">Headline goes</h1>
           <h1 className="headline">on this area</h1>
@@ -43,9 +43,7 @@ const Hero = ({ profile }) => {
         </div>
         <div className="cards-container">
           <div className="container">
-            {/* <div className="box"> */}
             <HeroCards profile={profile} setOrderTakeway={setOrderTakeway} />
-            {/* </div> */}
           </div>
         </div>
       </div>

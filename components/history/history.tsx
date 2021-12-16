@@ -122,116 +122,118 @@ const History = ({ images }) => {
       : setCurrentActive(currentActive - 1);
   };
   return (
-    <div className="events-container">
-      <h1 className="event-header">Our History</h1>
-      <p className="event-subheader">
-        Enim volutpat velit molestie morbi pharetra nam nisi et.
-      </p>
-      <hr className="gold-line" />
-      <div className="cards">
-        <div className="history-card">
-          <span className="yellow-circle"></span>
-          <div className="columns columns-direction">
-            <Column xl={6} xs={12}>
-              <img className="mobile-img" src={historyImages[0]} />
-            </Column>
-            <Column xl={6} xs={12}>
-              <div className="history-card-right-side">
-                <p className="history-card-headline">Opening</p>
-                <p className="history-card-year">1976</p>
-                <p className="history-card-text">
-                  Ac, est lacus iaculis fringilla senectus elementum. Euismod
-                  felis adipiscing porta velit. Ac, est lacus iaculis fringilla
-                  senectus elementum. Euismod felis adipiscing porta velit. Ac,
-                  est lacus iaculis fringilla senectus elementum.
-                </p>
-              </div>
-            </Column>
+    <div className="events-green-background">
+      <div className="events-container container">
+        <h1 className="event-header">Our History</h1>
+        <p className="event-subheader">
+          Enim volutpat velit molestie morbi pharetra nam nisi et.
+        </p>
+        <hr className="gold-line" />
+        <div className="cards">
+          <div className="history-card">
+            <span className="yellow-circle"></span>
+            <div className="columns columns-direction">
+              <Column xl={6} xs={12}>
+                <img className="mobile-img" src={historyImages[0]} />
+              </Column>
+              <Column xl={6} xs={12}>
+                <div className="history-card-right-side">
+                  <p className="history-card-headline">Opening</p>
+                  <p className="history-card-year">1976</p>
+                  <p className="history-card-text">
+                    Ac, est lacus iaculis fringilla senectus elementum. Euismod
+                    felis adipiscing porta velit. Ac, est lacus iaculis
+                    fringilla senectus elementum. Euismod felis adipiscing porta
+                    velit. Ac, est lacus iaculis fringilla senectus elementum.
+                  </p>
+                </div>
+              </Column>
+            </div>
+          </div>
+          <div className="history-card">
+            <span className="yellow-circle"></span>
+            <div className="columns">
+              <Column xl={6} xs={12}>
+                <img className="mobile-img" src={historyImages[1]} />
+              </Column>
+              <Column xl={6} xs={12}>
+                <div className="history-card-right-side">
+                  <p className="history-card-headline">Opening</p>
+                  <p className="history-card-year">1976</p>
+                  <p className="history-card-text">
+                    Ac, est lacus iaculis fringilla senectus elementum. Euismod
+                    felis adipiscing porta velit. Ac, est lacus iaculis
+                    fringilla senectus elementum. Euismod felis adipiscing porta
+                    velit. Ac, est lacus iaculis fringilla senectus elementum.
+                  </p>
+                </div>
+              </Column>
+            </div>
+          </div>
+          <div className="history-card last-card">
+            <span className="yellow-circle"></span>
+            <div className="columns">
+              <Column xl={6} xs={12}>
+                <img className="mobile-img" src={historyImages[2]} />
+              </Column>
+              <Column xl={6} xs={12}>
+                <div className="history-card-right-side">
+                  <p className="history-card-headline">Opening</p>
+                  <p className="history-card-year">1976</p>
+                  <p className="history-card-text">
+                    Ac, est lacus iaculis fringilla senectus elementum. Euismod
+                    felis adipiscing porta velit. Ac, est lacus iaculis
+                    fringilla senectus elementum. Euismod felis adipiscing porta
+                    velit. Ac, est lacus iaculis fringilla senectus elementum.
+                  </p>
+                </div>
+              </Column>
+            </div>
           </div>
         </div>
-        <div className="history-card">
-          <span className="yellow-circle"></span>
-          <div className="columns">
-            <Column xl={6} xs={12}>
-              <img className="mobile-img" src={historyImages[1]} />
-            </Column>
-            <Column xl={6} xs={12}>
-              <div className="history-card-right-side">
-                <p className="history-card-headline">Opening</p>
-                <p className="history-card-year">1976</p>
-                <p className="history-card-text">
-                  Ac, est lacus iaculis fringilla senectus elementum. Euismod
-                  felis adipiscing porta velit. Ac, est lacus iaculis fringilla
-                  senectus elementum. Euismod felis adipiscing porta velit. Ac,
-                  est lacus iaculis fringilla senectus elementum.
-                </p>
-              </div>
-            </Column>
-          </div>
+        <div className="container reviews">
+          <Columns>
+            {reviews
+              .slice(
+                (currentActive - 1) * reviewsPerPage,
+                reviewsPerPage * currentActive
+              )
+              .map((singleReview, k) => (
+                <ReviewCard key={k} review={singleReview} />
+              ))}
+          </Columns>
         </div>
-        <div className="history-card last-card">
-          <span className="yellow-circle"></span>
-          <div className="columns">
-            <Column xl={6} xs={12}>
-              <img className="mobile-img" src={historyImages[2]} />
-            </Column>
-            <Column xl={6} xs={12}>
-              <div className="history-card-right-side">
-                <p className="history-card-headline">Opening</p>
-                <p className="history-card-year">1976</p>
-                <p className="history-card-text">
-                  Ac, est lacus iaculis fringilla senectus elementum. Euismod
-                  felis adipiscing porta velit. Ac, est lacus iaculis fringilla
-                  senectus elementum. Euismod felis adipiscing porta velit. Ac,
-                  est lacus iaculis fringilla senectus elementum.
-                </p>
-              </div>
-            </Column>
-          </div>
-        </div>
-      </div>
-      <div className="reviews">
-        <Columns>
-          {reviews
-            .slice(
-              (currentActive - 1) * reviewsPerPage,
-              reviewsPerPage * currentActive
-            )
-            .map((singleReview, k) => (
-              <ReviewCard key={k} review={singleReview} />
-            ))}
-        </Columns>
-      </div>
-      <div className="pagination">
-        {totalReviewPages > 1 && (
-          <>
-            {" "}
-            <span
-              onClick={() => handleBack()}
-              className="pagination-back is-clickable"
-            >
-              <img src="/images/icons/icons/circle-left.png" alt="Go back" />
-            </span>
-            {pages.map((page, key) => (
+        <div className="pagination">
+          {totalReviewPages > 1 && (
+            <>
+              {" "}
               <span
-                key={key}
-                onClick={(e) => handleClick(e, page)}
-                className={`pagination-dot ${
-                  currentActive === page && "active-page"
-                }`}
-              ></span>
-            ))}
-            <span
-              onClick={() => handleForward()}
-              className="pagination-forward is-clickable"
-            >
-              <img
-                src="/images/icons/icons/circle-right.png"
-                alt="Go forward"
-              />
-            </span>
-          </>
-        )}
+                onClick={() => handleBack()}
+                className="pagination-back is-clickable"
+              >
+                <img src="/images/icons/icons/circle-left.png" alt="Go back" />
+              </span>
+              {pages.map((page, key) => (
+                <span
+                  key={key}
+                  onClick={(e) => handleClick(e, page)}
+                  className={`pagination-dot ${
+                    currentActive === page && "active-page"
+                  }`}
+                ></span>
+              ))}
+              <span
+                onClick={() => handleForward()}
+                className="pagination-forward is-clickable"
+              >
+                <img
+                  src="/images/icons/icons/circle-right.png"
+                  alt="Go forward"
+                />
+              </span>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -259,7 +261,7 @@ const ReviewCard = ({ review, ...props }) => {
     return newArray;
   };
   return (
-    <Column lg={3} xs={10}>
+    <Column lg={4} xs={10}>
       <div className="review-card-container">
         <div className="rating">
           {createStarArray()}

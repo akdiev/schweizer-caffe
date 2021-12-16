@@ -143,20 +143,22 @@
   border-top: 1px solid #446855;
   margin-top: 80px;
   padding-top: 80px;
-  width: 90%;
+  width: 100%;
   margin-bottom: 36px;
-  @include desktop {
-    .columns {
-      justify-content: center;
-    }
-  }
 }
 
 @media only screen and(max-width: 480px) {
   .reviews {
+    margin-top: 40px;
+    padding-top: 40px;
+    margin-bottom: 0;
     .columns {
       overflow-x: scroll;
       display: flex;
+      padding: 1rem;
+    }
+    .column {
+      padding: 0.5rem;
     }
   }
   .review-card-container {
@@ -168,6 +170,9 @@
     position: absolute;
     bottom: 0;
     padding-bottom: 1rem;
+  }
+  .pagination {
+    margin-top: 0 !important;
   }
 }
 
@@ -255,5 +260,11 @@
 .last-card {
   .column {
     padding-bottom: 0;
+  }
+}
+
+@include desktop {
+  .pagination {
+    margin-bottom: 32px;
   }
 }

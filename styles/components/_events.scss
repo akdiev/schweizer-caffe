@@ -6,14 +6,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 20px 20px;
+  padding: 20px 0px;
   -webkit-scrollbar {
     display: none;
   }
-}
-
-.events-wrapper {
-  padding: 70px 0;
 }
 
 .event-header {
@@ -44,7 +40,6 @@
   flex-direction: column;
   box-sizing: border-box;
   height: min-content;
-  width: 300px;
   background-color: #ffffff;
   margin-right: 24px;
   img {
@@ -131,7 +126,7 @@
 
 .events {
   text-align: center;
-  margin-top: 150px;
+  margin-top: 24px;
   margin-bottom: 80px;
   position: relative;
   -webkit-scrollbar {
@@ -146,14 +141,6 @@
   &-container {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
-    .events-subcontainer {
-      display: flex;
-
-      @include touch {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-    }
     @media only screen and (max-width: 1350px) {
       overflow-x: scroll;
       overflow-y: hidden;
@@ -288,5 +275,39 @@
     border: 1px solid #ca9f68;
     width: 45%;
     margin-right: 12px;
+  }
+}
+
+.events-green-background {
+  background-color: #0a301c;
+}
+
+.events {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 36px;
+}
+
+@media only screen and(max-width: 480px) {
+  .events {
+    .columns {
+      overflow-x: scroll;
+      display: flex;
+      padding: 0 16px;
+    }
+    .column {
+      padding: 0.5rem;
+    }
+  }
+
+  .event-card-container {
+    margin-right: 16px;
+  }
+
+  .events {
+    .event-card-container:last-child {
+      margin-right: 0px;
+    }
   }
 }
