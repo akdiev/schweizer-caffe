@@ -244,6 +244,11 @@
 }
 
 .reviews {
+  @media screen and (min-width: 769px) {
+    .columns:not(.is-desktop) {
+      width: 100%;
+    }
+  }
   .review-card-container:last-child {
     margin-right: 0px;
   }

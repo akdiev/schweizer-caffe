@@ -92,9 +92,9 @@
         height: 60%;
       }
       @include touch {
-        height: 450px;
+        height: 350px;
         img:not(:last-child) {
-          margin-bottom: 10px;
+          margin-bottom: 3px;
         }
       }
     }
@@ -113,10 +113,10 @@
         height: 60%;
       }
       @include touch {
-        height: 450px;
+        height: 350px;
         margin-left: 0px;
         img:not(:last-child) {
-          margin-bottom: 10px;
+          margin-bottom: 3px;
         }
       }
     }
@@ -141,7 +141,8 @@
     height: min-content;
   }
 }
-
-.width-80 {
-  width: 80%;
+@include desktop {
+  .width-80 {
+    width: 80%;
+  }
 }

@@ -49,7 +49,6 @@ const Navbar = (props) => {
 
   if (navbar) {
     if (navbarActive) {
-      orangeNavbar = "navbar-orange";
       mobileNavbarClasses += "not-on-top";
     } else mobileNavbarClasses += "not-on-top";
   } else {
@@ -83,7 +82,7 @@ const Navbar = (props) => {
       <div
         className={`navbar not-on-top is-fixed-top ${mobileNavbarClasses} is-hidden-desktop`}
       >
-        <div className={`navbar-brand ${orangeNavbar}`}>
+        <div className={`navbar-brand ${navbarActive ? "navbar-orange" : ""}`}>
           <a className="navbar-item" onClick={() => handleClick("#home")}>
             {navbarActive ? (
               <Logo imgSource="images/white-logo.svg" />

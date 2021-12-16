@@ -78,8 +78,8 @@ const History = ({ images }) => {
     },
     {
       id: 2,
-      rating: 5,
-      title: "So good 😊",
+      rating: 1,
+      title: "Terrible",
       text: "Excellent place for fika! Located really close to the metro station 🚉 I enjoyed a mandelcroissant I ordered and a delicious coffee ☕️",
       author: {
         id: 2,
@@ -199,7 +199,16 @@ const History = ({ images }) => {
                 reviewsPerPage * currentActive
               )
               .map((singleReview, k) => (
-                <ReviewCard key={k} review={singleReview} />
+                <ReviewCard
+                  numberOfItems={
+                    reviews.slice(
+                      (currentActive - 1) * reviewsPerPage,
+                      reviewsPerPage * currentActive
+                    ).length
+                  }
+                  key={k}
+                  review={singleReview}
+                />
               ))}
           </Columns>
         </div>
