@@ -242,3 +242,9 @@
   width: 100%;
   height: auto;
 }
+
+@media only screen and (min-width: 1440px) {
+  .close-modal-button {
+    right: -110px;
+  }
+}
