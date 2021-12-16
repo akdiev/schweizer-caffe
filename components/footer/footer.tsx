@@ -4,6 +4,7 @@ import FacebookIcon from "../../assets/icons/facebook-icon";
 import { BsInstagram } from "react-icons/bs";
 import Logo from "../navbar/logo";
 import router from "next/dist/client/router";
+import GuestieLogo from "../../public/images/icons/icons/guestioLogo";
 
 const Footer = ({ ...props }) => {
   return (
@@ -50,7 +51,9 @@ const Footer = ({ ...props }) => {
                 <p className="gray-text-guest">
                   Denna hemsida är skapad med hjälp av Guestie
                 </p>
-                <button className="guestie-button"> Guestie</button>
+                <button className="guestie-button">
+                  <GuestieLogo />
+                </button>
               </div>
             </>
           )}

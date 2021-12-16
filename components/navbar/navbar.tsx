@@ -8,6 +8,7 @@ import {
 } from "react-icons/io5";
 import Logo from "./logo";
 import { AiOutlineClose } from "react-icons/ai";
+import GuestieLogo from "../../public/images/icons/icons/guestioLogo";
 
 const navOptions = [
   {
@@ -157,7 +158,9 @@ const Navbar = (props) => {
             <p className="caption">
               Denna hemsida är skapad med hjälp av Guestie
             </p>
-            <button className="guestie-button">Guestie</button>
+            <button className="guestie-button">
+              <GuestieLogo />
+            </button>
           </div>
         </div>
       </div>
