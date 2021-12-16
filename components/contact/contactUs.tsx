@@ -2,7 +2,7 @@ import React from "react";
 import ContactCard from "./contactCard";
 import ContactForm from "./contactForm";
 
-export default function ContactUs() {
+export default function ContactUs({ profile }) {
   return (
     <div id="contact-us" className="contact-us box">
       <div className="contact-us-container container">
@@ -22,12 +22,11 @@ export default function ContactUs() {
 
               <ContactCard
                 icon="/images/location-circle.png"
-                content="Drabantvägen 4, 194 33 
-                Upplands Väsby, Sverige"
+                content={profile?.address}
               />
               <ContactCard
                 icon="/images/location-circle.png"
-                content="076 027 41 51"
+                content={profile?.phone}
               />
             </div>
           </div>

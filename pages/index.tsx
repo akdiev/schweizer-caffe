@@ -82,7 +82,7 @@ function Home({ data }) {
       <Element name="#gallery">
         <EventsGallery rows={1} />
       </Element>
-      <ContactUs />
+      <ContactUs profile={profile} />
 
       <Footer
         profile={profile}
