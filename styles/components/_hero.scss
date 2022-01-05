@@ -327,3 +327,11 @@
 .high-index {
   z-index: 2;
 }
+
+@include mobile {
+  .hero-cards {
+    .column {
+      padding: 0.25rem 0.75rem;
+    }
+  }
+}
