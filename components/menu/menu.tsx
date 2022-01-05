@@ -23,6 +23,10 @@ const Menu = (props) => {
     }
   }
 
+  window.onbeforeunload = function () {
+    props.closeModal();
+  };
+
   fillMenu();
   return (
     <div className="green-background">
