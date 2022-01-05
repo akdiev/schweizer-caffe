@@ -22,10 +22,10 @@ const Footer = ({ ...props }) => {
                 </span>
                 <div className="social-footer">
                   <div className="icons">
-                    <a href="instagram.com>">
+                    <a href={props.profile?.instagram}>
                       <BsInstagram className="instagram-icon" />
                     </a>
-                    <a href="facebook.com">
+                    <a href={props.profile?.facebook}>
                       <FacebookIcon />
                     </a>
                   </div>

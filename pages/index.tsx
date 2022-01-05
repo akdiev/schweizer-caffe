@@ -24,7 +24,6 @@ function Home({ data }) {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   let profile = data;
-
   function scollToElement(element) {
     scroller.scrollTo(element, {
       duration: 800,
