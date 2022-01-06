@@ -4,7 +4,6 @@ import FacebookIcon from "../../assets/icons/facebook-icon";
 import { BsInstagram } from "react-icons/bs";
 import Logo from "../navbar/logo";
 import router from "next/dist/client/router";
-import GuestieLogo from "../../public/images/icons/icons/guestioLogo";
 
 const Footer = ({ ...props }) => {
   return (
@@ -33,10 +32,10 @@ const Footer = ({ ...props }) => {
                     © Cafe Schweizer 2021 • All rights reserved.
                   </p>
                 </div>
-                <p className="gray-text-guest">
+                {/* <p className="gray-text-guest">
                   Denna hemsida är skapad med hjälp av Guestie
-                </p>
-                <button className="guestie-button"> Guestie</button>
+                </p> */}
+                {/* <button className="guestie-button"> Guestie</button> */}
               </div>
             </div>
           ) : (
@@ -48,12 +47,12 @@ const Footer = ({ ...props }) => {
                 <span className="scroll-to-top" onClick={props.scrollToTop}>
                   <IoMdArrowDropup className="arrow-up-icon" />
                 </span>
-                <p className="gray-text-guest">
+                {/* <p className="gray-text-guest">
                   Denna hemsida är skapad med hjälp av Guestie
-                </p>
-                <button className="guestie-button">
+                </p> */}
+                {/* <button className="guestie-button">
                   <GuestieLogo />
-                </button>
+                </button> */}
               </div>
             </>
           )}

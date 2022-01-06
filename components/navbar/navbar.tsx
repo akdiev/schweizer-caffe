@@ -158,9 +158,9 @@ const Navbar = (props) => {
             <p className="caption">
               Denna hemsida är skapad med hjälp av Guestie
             </p>
-            <button className="guestie-button">
+            {/* <button className="guestie-button">
               <GuestieLogo />
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
