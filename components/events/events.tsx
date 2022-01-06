@@ -44,7 +44,7 @@ const RestaurantEvents = () => {
     {
       id: 1,
       image: "images/eventimage2.jpg",
-      title: "Libero commodo arcu elementum eget pharetra.",
+      title: "Ligula molestie pharetra auctor tincidunt id turpis et. ",
       eventTime: "Varje tisdag | 15:00 - 20:00",
       description:
         "Sit pellentesque a at eros, nisl etiam. Nec, porttitor turpis vel penatibus dignissim non a mauris. Sed eget ipsum eu ipsum convallis vivamus sed ornare mi urna ne.",
@@ -53,7 +53,7 @@ const RestaurantEvents = () => {
     {
       id: 2,
       image: "images/eventimage3.jpg",
-      title: "Libero commodo arcu elementum eget pharetra.",
+      title: "Pellentesque libero tempor vel nec nulla odio vulputate ut.",
       eventTime: "Varje tisdag | 15:00 - 20:00",
       description:
         "Sit pellentesque a at eros, nisl etiam. Nec, porttitor turpis vel penatibus dignissim non a mauris. Sed eget ipsum eu ipsum convallis vivamus sed ornare mi urna ne.",
@@ -63,7 +63,7 @@ const RestaurantEvents = () => {
     {
       id: 3,
       image: "",
-      title: "Libero commodo arcu elementum eget pharetra.",
+      title: "Sed risus at consectetur vitae ut mauris scelerisque nullam.",
       eventTime: "Varje tisdag | 15:00 - 20:00",
       description:
         "Sit pellentesque a at eros, nisl etiam. Nec, porttitor turpis vel penatibus dignissim non a mauris. Sed eget ipsum eu ipsum convallis vivamus sed ornare mi urna ne.",

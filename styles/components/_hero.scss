@@ -297,7 +297,11 @@
 }
 
 .basket-icon {
-  margin-top: 3px;
+  margin-top: 5px;
+  svg {
+    width: 19px;
+    height: 16.6px;
+  }
 }
 
 .align-left {

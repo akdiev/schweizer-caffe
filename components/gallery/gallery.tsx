@@ -82,13 +82,13 @@ const MainGallery = ({ images }) => {
 
       <div className="gallery is-hidden-desktop">
         {makeSingleArray(images).map((image, k) => {
-          <Imgix
-            key={k}
-            width={432}
-            height={270}
-            src={image}
-            alt="Gallery item"
-          />;
+          // <Imgix
+          //   key={k}
+          //   width={432}
+          //   height={270}
+          //   src={image}
+          //   alt="Gallery item"
+          // />;
         })}
       </div>
     </div>

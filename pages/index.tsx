@@ -45,6 +45,8 @@ function Home({ data }) {
     ],
   ];
 
+  const galleryImages = [];
+
   useEffect(() => {
     if (menuIsOpened) {
       document.querySelector("html").classList.add("is-clipped");

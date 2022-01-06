@@ -100,6 +100,8 @@
 .events-gallery {
   display: flex;
   flex-direction: row;
+  overflow: scroll;
+  width: auto;
 }
 
 .rating {
@@ -253,10 +255,7 @@
 .gallery-row {
   display: flex;
   flex-direction: row;
-  img {
-    height: 270px;
-    width: 432px;
-  }
+  width: auto;
 }
 
 .event-buttons {
@@ -308,6 +307,19 @@
   .events {
     .event-card-container:last-child {
       margin-right: 0px;
+    }
+  }
+}
+
+@include desktop {
+  .image-res {
+    height: 320px;
+    width: 432px;
+    img {
+      width: 432px;
+      min-width: 432px;
+      height: 320px;
+      min-height: 320px;
     }
   }
 }

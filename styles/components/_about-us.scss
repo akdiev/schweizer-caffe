@@ -78,6 +78,9 @@
   .about-us-right {
     display: flex;
     width: 100%;
+    @include desktop {
+      justify-content: end;
+    }
     .about-us-images-left-col {
       width: 318px;
       @include mobile {

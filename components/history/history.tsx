@@ -18,7 +18,7 @@ const History = ({ images }) => {
   const reviews: ReviewInterface[] = [
     {
       id: 0,
-      rating: 4,
+      rating: 5,
       title: "Perfect Breakfast!",
       text: "We came here for a quick breakfast and were surprised at how many people were sitting here at 10am on a weekday! There were a lot of tables, but they were mostly full. We had to squeeze in different tables. The staff recommended certain dishes, so we ordered them. The croissant was very flaky and just the right amount of bread to toppings.",
       author: {
@@ -42,9 +42,9 @@ const History = ({ images }) => {
     },
     {
       id: 2,
-      rating: 3,
-      title: "So good 😊",
-      text: "Excellent place for fika! Located really close to the metro station 🚉 I enjoyed a mandelcroissant I ordered and a delicious coffee ☕️",
+      rating: 5,
+      title: "Finest food in a café",
+      text: "Modern-healthy lunch dishes aside to traditional swedish sweet pastries. Wounderfull atmosphere, though croweded. It´s the perfect place of a chat with a good friend, but not for studying.",
       author: {
         id: 2,
         name: "Wendy",
@@ -158,8 +158,8 @@ const History = ({ images }) => {
               </Column>
               <Column xl={6} xs={12}>
                 <div className="history-card-right-side">
-                  <p className="history-card-headline">Opening</p>
-                  <p className="history-card-year">1976</p>
+                  <p className="history-card-headline">BEGINING YEARS</p>
+                  <p className="history-card-year">1976-2011</p>
                   <p className="history-card-text">
                     Ac, est lacus iaculis fringilla senectus elementum. Euismod
                     felis adipiscing porta velit. Ac, est lacus iaculis
@@ -178,8 +178,8 @@ const History = ({ images }) => {
               </Column>
               <Column xl={6} xs={12}>
                 <div className="history-card-right-side">
-                  <p className="history-card-headline">Opening</p>
-                  <p className="history-card-year">1976</p>
+                  <p className="history-card-headline">present</p>
+                  <p className="history-card-year">2011 - Present</p>
                   <p className="history-card-text">
                     Ac, est lacus iaculis fringilla senectus elementum. Euismod
                     felis adipiscing porta velit. Ac, est lacus iaculis
