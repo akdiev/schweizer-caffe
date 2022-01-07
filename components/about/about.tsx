@@ -13,7 +13,7 @@ const About = ({ images, ...props }) => {
         <div className="about-us-left">
           <div className="width-80">
             <p className="about-us-header">ABOUT US</p>
-            <h2 className="about-us-headline">Headline goes on this area</h2>
+            <h2 className="about-us-headline">Discover our Menu</h2>
             <p className="about-us-text">
               Ac, est lacus iaculis fringilla senectus elementum. Euismod felis
               adipiscing porta velit. Ac, est lacus iaculis fringilla senectus
@@ -21,9 +21,9 @@ const About = ({ images, ...props }) => {
               iaculis fringilla senectus elementum. Euismod felis adipiscin.
             </p>
             <p className="about-us-subtext">
-              Ac, est lacus iaculis fringilla senectus elementum. Euismod felis
-              adipiscing porta velit. Ac, est lacus iaculis fringilla senectus
-              elementum. Euismod felis adipiscing porta velit.
+              Now, we decided to change our concept and focus on organic,
+              homemade, healthy menu. Our idea of serving 25 landscapes of
+              Sweden has finally come to life when we reopened 6th of June.
             </p>
             <button
               onClick={() => props.openMenu(true)}

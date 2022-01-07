@@ -61,7 +61,7 @@ function Home({ data }) {
   };
 
   return (
-    <div ref={topRef} className="fullpage">
+    <div>
       <Navbar
         openMenu={setMenuIsOpened}
         profile={profile}

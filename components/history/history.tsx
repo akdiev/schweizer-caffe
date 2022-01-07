@@ -141,10 +141,8 @@ const History = ({ images }) => {
                   <p className="history-card-headline">Opening</p>
                   <p className="history-card-year">1976</p>
                   <p className="history-card-text">
-                    Ac, est lacus iaculis fringilla senectus elementum. Euismod
-                    felis adipiscing porta velit. Ac, est lacus iaculis
-                    fringilla senectus elementum. Euismod felis adipiscing porta
-                    velit. Ac, est lacus iaculis fringilla senectus elementum.
+                    Café Schweiser opened and is a family tradition since the
+                    1920s.
                   </p>
                 </div>
               </Column>
@@ -161,10 +159,9 @@ const History = ({ images }) => {
                   <p className="history-card-headline">BEGINING YEARS</p>
                   <p className="history-card-year">1976-2011</p>
                   <p className="history-card-text">
-                    Ac, est lacus iaculis fringilla senectus elementum. Euismod
-                    felis adipiscing porta velit. Ac, est lacus iaculis
-                    fringilla senectus elementum. Euismod felis adipiscing porta
-                    velit. Ac, est lacus iaculis fringilla senectus elementum.
+                    Originally the café was a “Schweizeri (A coffee shop where
+                    liqueur was served)” and was founded by Swiss immigrants
+                    that came to Sweden in the late 1800s .
                   </p>
                 </div>
               </Column>
@@ -181,10 +178,10 @@ const History = ({ images }) => {
                   <p className="history-card-headline">present</p>
                   <p className="history-card-year">2011 - Present</p>
                   <p className="history-card-text">
-                    Ac, est lacus iaculis fringilla senectus elementum. Euismod
-                    felis adipiscing porta velit. Ac, est lacus iaculis
-                    fringilla senectus elementum. Euismod felis adipiscing porta
-                    velit. Ac, est lacus iaculis fringilla senectus elementum.
+                    Today Café Schweizer is still a family run company with
+                    Indira Alikalific and her son, Dino Alikalific as owners.
+                    With their passion and love for the profession they bring
+                    the tradition to the next generation .
                   </p>
                 </div>
               </Column>

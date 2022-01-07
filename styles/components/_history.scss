@@ -105,6 +105,7 @@
   border-left: 1px solid;
   border-image: linear-gradient(to top, white, rgba(0, 0, 0, 0)) 1 100%;
   position: relative;
+  border-width: 0 0 0 2px !important;
 }
 
 .horizontal-line-history {
