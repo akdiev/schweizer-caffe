@@ -52,7 +52,7 @@ const HeroCards = ({ setOrderTakeway, profile }) => {
         <div className="column is-3-desktop is-12-mobile is-12-tablet">
           <SingleCard imageSource="/images/restaurant-circle.png">
             <p className="title is-5 mb-1">TAKEAWAY?</p>
-            <button
+            {/* <button
               className="menu-button width-200 has-font-14"
               onClick={() => handleClick()}
             >
@@ -60,7 +60,7 @@ const HeroCards = ({ setOrderTakeway, profile }) => {
                 <IoMdBasket />
               </span>{" "}
               BESTÄLL TAKEAWAY
-            </button>
+            </button> */}
           </SingleCard>
         </div>
       </div>

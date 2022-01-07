@@ -64,6 +64,7 @@
   font-size: 18px;
   line-height: 22px;
   color: #39312a;
+  text-align: left;
 }
 
 .event-time {
@@ -195,7 +196,8 @@
   }
 
   .event-time {
-    color: #fff;
+    text-align: left;
+    color: #39312a;
     font-family: $family-secondary;
   }
 
@@ -274,6 +276,7 @@
     border: 1px solid #ca9f68;
     width: 45%;
     margin-right: 12px;
+    cursor: pointer;
   }
 }
 

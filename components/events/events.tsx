@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/dist/client/router";
 import { setEventPages } from "../../utils/helpers";
 import Columns from "../../assets/Bulma/Columns";
@@ -11,7 +11,6 @@ interface EventCard {
   eventTime?: string;
   description?: string;
   menuUrl?: string;
-  lasMer?: boolean;
 }
 
 const RestaurantEvents = () => {
@@ -56,9 +55,8 @@ const RestaurantEvents = () => {
       title: "Pellentesque libero tempor vel nec nulla odio vulputate ut.",
       eventTime: "Varje tisdag | 15:00 - 20:00",
       description:
-        "Sit pellentesque a at eros, nisl etiam. Nec, porttitor turpis vel penatibus dignissim non a mauris. Sed eget ipsum eu ipsum convallis vivamus sed ornare mi urna ne.",
+        "Sit pellentesque a at eros, nisl etiam. Nec, porttitor turpis vel penatibus dignissim non a mauris. Sed eget ipsum eu ipsum convallis vivamus sed ornare mi urna ne.Sit pellentesque a at eros, nisl etiam. Nec, porttitor turpis vel penatibus dignissim non a mauris. Sed eget ipsum eu ipsum convallis vivamus sed ornare mi urna ne.",
       menuUrl: "test",
-      lasMer: true,
     },
     {
       id: 3,
@@ -169,7 +167,11 @@ const RestaurantEvents = () => {
                 eventsPerPage * currentActive
               )
               .map((event, key) => (
-                <EventMenuCard key={key} content={event} />
+                <EventMenuCard
+                  key={key}
+                  content={event}
+                  lasMer={event.description.length > 165 ? true : false}
+                />
               ))}
           </Columns>
         </div>
@@ -211,6 +213,24 @@ const RestaurantEvents = () => {
 
 const EventMenuCard = ({ content, ...props }) => {
   const router = useRouter();
+  const [showFullDescription, setShowFullDescription] = useState(false);
+  const [shownDescription, setShownDescription] = useState("");
+
+  useEffect(() => {
+    props.lasMer
+      ? setShownDescription(content.description.substring(0, 165))
+      : setShownDescription(content.description);
+  }, []);
+
+  function readMoreDescription() {
+    setShowFullDescription(!showFullDescription);
+    if (!showFullDescription) {
+      setShownDescription(content.description);
+    } else {
+      setShownDescription(content.description.substring(0, 165));
+    }
+  }
+
   return (
     <Column md={3} lg={3} xs={11}>
       <div className="event-card-container">
@@ -223,8 +243,11 @@ const EventMenuCard = ({ content, ...props }) => {
           </div>
           <div>
             <div className="description-and-menu-button">
-              <p className="description">{content.description}</p>
-              {!content.lasMer ? (
+              <p className="description">
+                {shownDescription}
+                {props.lasMer && !showFullDescription && <span>...</span>}
+              </p>
+              {!props.lasMer ? (
                 <button
                   className="menu-button margin-bot-28 full-width"
                   onClick={() => router.push(content.menuUrl)}
@@ -233,7 +256,12 @@ const EventMenuCard = ({ content, ...props }) => {
                 </button>
               ) : (
                 <div className="event-buttons margin-bot-28 full-width">
-                  <button className="lasmer-button">LAS MER</button>
+                  <button
+                    className="lasmer-button"
+                    onClick={() => readMoreDescription()}
+                  >
+                    LAS MER
+                  </button>
                   <button
                     className="menu-button"
                     onClick={() => router.push(content.menuUrl)}
