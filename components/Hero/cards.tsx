@@ -28,19 +28,19 @@ const HeroCards = ({ setOrderTakeway, profile }) => {
   return (
     <div className="hero-cards">
       <div className="columns is-desktop">
-        <div className="column is-3-desktop is-12-mobile is-12-tablet">
+        <div className="column is-4-desktop is-12-mobile is-12-tablet">
           <SingleCard imageSource="/images/icons/time.svg" highZindex={true}>
             <p className="title is-5 mb-1">ÖPPETTIDER</p>
             <TimeOfWork workTime={profile?.working_time} />
           </SingleCard>
         </div>
-        <div className="column is-3-desktop is-12-mobile is-12-tablet">
+        <div className="column is-4-desktop is-12-mobile is-12-tablet">
           <SingleCard imageSource="/images/location-circle.png">
             <p className="title is-5 mb-1">ADDRESS</p>
             <p className="address">{profile?.address}</p>
           </SingleCard>
         </div>
-        <div className="column is-3-desktop is-12-mobile is-12-tablet">
+        <div className="column is-4-desktop is-12-mobile is-12-tablet">
           <SingleCard
             imageSource="/images/icons/icons/call-icon.png"
             whiteCircle={true}
@@ -49,10 +49,10 @@ const HeroCards = ({ setOrderTakeway, profile }) => {
             <p className="address">{profile?.phone}</p>
           </SingleCard>
         </div>
-        <div className="column is-3-desktop is-12-mobile is-12-tablet">
+        {/* <div className="column is-3-desktop is-12-mobile is-12-tablet">
           <SingleCard imageSource="/images/restaurant-circle.png">
             <p className="title is-5 mb-1">TAKEAWAY?</p>
-            {/* <button
+             <button
               className="menu-button width-200 has-font-14"
               onClick={() => handleClick()}
             >
@@ -60,9 +60,9 @@ const HeroCards = ({ setOrderTakeway, profile }) => {
                 <IoMdBasket />
               </span>{" "}
               BESTÄLL TAKEAWAY
-            </button> */}
+            </button> 
           </SingleCard>
-        </div>
+        </div> */}
       </div>
     </div>
   );
