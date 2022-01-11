@@ -154,10 +154,6 @@ const RestaurantEvents = ({ ...props }) => {
     <div className="events-green-background">
       <div className="container events-container ">
         <h1 className="event-header">Events</h1>
-        <p className="event-subheader">
-          Enim volutpat velit molestie morbi pharetra nam nisi et.
-        </p>
-
         <hr className="gold-line" />
         <div className="events container">
           <Columns>

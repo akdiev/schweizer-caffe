@@ -14,12 +14,9 @@ const Hero = ({ profile }) => {
       <div id="home" className="hero">
         <div className="hero-content container">
           <p className="hero-feature">Feature</p>
-          <h1 className="headline">Headline goes</h1>
-          <h1 className="headline">on this area</h1>
-          <p className="subheadline">
-            Ac, est lacus iaculis fringilla senectus elementum.
-          </p>
-          <p className="subheadline">Euismod felis adipiscing porta velit.</p>
+          <h1 className="headline">Welcome to </h1>
+          <h1 className="headline">Cafe Schweizer!</h1>
+          <p className="subheadline">SINCE 1920 - STOCKHOLM</p>
         </div>
         <div className="cards-container">
           <div className="container">

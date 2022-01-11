@@ -15,10 +15,11 @@ const About = ({ images, ...props }) => {
             <p className="about-us-header">ABOUT US</p>
             <h2 className="about-us-headline">Discover our Menu</h2>
             <p className="about-us-text">
-              Ac, est lacus iaculis fringilla senectus elementum. Euismod felis
-              adipiscing porta velit. Ac, est lacus iaculis fringilla senectus
-              elementum. Euismod felis adipiscing porta velit. Ac, est lacus
-              iaculis fringilla senectus elementum. Euismod felis adipiscin.
+              We are Schweizer Konditori, existing from 1920 in Gamla Stan,
+              Västerlånggatan 9, Stockholm. All these years we have served our
+              guests with delicious sandwiches, desserts, coffee and our most
+              famous fresh squeezed orange juice. Reviews from our guests are
+              great mirror of our services.
             </p>
             <p className="about-us-subtext">
               Now, we decided to change our concept and focus on organic,
