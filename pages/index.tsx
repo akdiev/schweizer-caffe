@@ -21,7 +21,7 @@ function Home({ data }) {
   const topRef = useRef(null);
   const router = useRouter();
   const [menuIsOpened, setMenuIsOpened] = useState(false);
-  const [singleEventModalContent, setSingleEventModalContent] = useState("");
+  const [singleEventModalContent, setSingleEventModalContent] = useState(null);
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
@@ -50,13 +50,13 @@ function Home({ data }) {
   const galleryImages = [];
 
   useEffect(() => {
-    if (menuIsOpened) {
+    if (menuIsOpened || singleEventModalContent) {
       document.querySelector("html").classList.add("is-clipped");
     }
     return () => {
       document.querySelector("html").classList.remove("is-clipped");
     };
-  }, [menuIsOpened]);
+  }, [menuIsOpened, singleEventModalContent]);
 
   const executeScroll = () => {
     topRef.current.scrollIntoView();
@@ -98,7 +98,7 @@ function Home({ data }) {
       />
       {singleEventModalContent && (
         <SingleEventView
-          closeModal={() => setSingleEventModalContent("")}
+          closeModal={() => setSingleEventModalContent(null)}
           content={singleEventModalContent}
         />
       )}

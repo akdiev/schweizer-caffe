@@ -1,6 +1,7 @@
 import React from "react";
 import TimeOfWork from "../timeOfWork";
 import { IoMdBasket } from "react-icons/io";
+import { useRouter } from "next/router";
 
 const SingleCard = (props) => {
   const { imageSource, children, whiteCircle, highZindex } = props;
@@ -20,10 +21,16 @@ const SingleCard = (props) => {
   );
 };
 
-const HeroCards = ({ setOrderTakeway, profile }) => {
+const HeroCards = ({ setOrderTakeway, profile, ...props }) => {
+  const router = useRouter();
   const handleClick = () => {
     setOrderTakeway(true);
   };
+
+  function handleOpenGoogleMaps() {
+    const win = window.open("https://goo.gl/maps/YS67nQcmWSaE1sh79", "_blank");
+    win.focus();
+  }
 
   return (
     <div className="hero-cards">
@@ -34,13 +41,19 @@ const HeroCards = ({ setOrderTakeway, profile }) => {
             <TimeOfWork workTime={profile?.working_time} />
           </SingleCard>
         </div>
-        <div className="column is-4-desktop is-12-mobile is-12-tablet">
+        <div
+          className="column is-4-desktop is-12-mobile is-12-tablet cursor-pointer"
+          onClick={() => handleOpenGoogleMaps()}
+        >
           <SingleCard imageSource="/images/location-circle.png">
             <p className="title is-5 mb-1">ADDRESS</p>
             <p className="address">{profile?.address}</p>
           </SingleCard>
         </div>
-        <div className="column is-4-desktop is-12-mobile is-12-tablet">
+        <div
+          className="column is-4-desktop is-12-mobile is-12-tablet cursor-pointer"
+          onClick={() => window.open("tel:900300400")}
+        >
           <SingleCard
             imageSource="/images/icons/icons/call-icon.png"
             whiteCircle={true}
