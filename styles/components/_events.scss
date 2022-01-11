@@ -326,3 +326,51 @@
     }
   }
 }
+
+.event-modal {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999999;
+  background: rgba(238, 238, 238, 0.4);
+  justify-content: center;
+  align-items: center;
+
+  .event-card-content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    .event-card-container {
+      position: relative !important;
+    }
+  }
+
+  .close-event-modal-button {
+    position: absolute;
+    top: -44px;
+    right: -45px;
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    border-radius: 99px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    .close-icon {
+      font-size: 34px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      margin-top: 8px;
+      font-weight: 100;
+    }
+  }
+}

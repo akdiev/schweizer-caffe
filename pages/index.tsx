@@ -15,11 +15,13 @@ import ContactUs from "../components/contact/contactUs";
 import EventsGallery from "../components/events/eventsGallery";
 import Menu from "../components/menu/menu";
 import axios from "axios";
+import SingleEventView from "../components/singleEventView/singleEventView";
 
 function Home({ data }) {
   const topRef = useRef(null);
   const router = useRouter();
   const [menuIsOpened, setMenuIsOpened] = useState(false);
+  const [singleEventModalContent, setSingleEventModalContent] = useState("");
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
@@ -71,7 +73,11 @@ function Home({ data }) {
         <Hero profile={profile} />
       </Element>
       <Element name="#restaurant">
-        <RestaurantEvents />
+        <RestaurantEvents
+          readMoreModal={(eventObject) =>
+            setSingleEventModalContent(eventObject)
+          }
+        />
         <EventsGallery />
       </Element>
 
@@ -90,6 +96,12 @@ function Home({ data }) {
         isMobile={isMobile}
         scrollToTop={executeScroll}
       />
+      {singleEventModalContent && (
+        <SingleEventView
+          closeModal={() => setSingleEventModalContent("")}
+          content={singleEventModalContent}
+        />
+      )}
 
       {menuIsOpened && <Menu closeModal={() => setMenuIsOpened(false)} />}
     </div>

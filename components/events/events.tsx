@@ -13,7 +13,7 @@ interface EventCard {
   menuUrl?: string;
 }
 
-const RestaurantEvents = () => {
+const RestaurantEvents = ({ ...props }) => {
   const [currentActive, setCurrentActive] = React.useState(1);
 
   const eventsPerPage = 4;
@@ -170,7 +170,8 @@ const RestaurantEvents = () => {
                 <EventMenuCard
                   key={key}
                   content={event}
-                  lasMer={event.description.length > 165 ? true : false}
+                  lasMer={event.description.length > 140 ? true : false}
+                  readMore={(eventObject) => props.readMoreModal(eventObject)}
                 />
               ))}
           </Columns>
@@ -213,23 +214,13 @@ const RestaurantEvents = () => {
 
 const EventMenuCard = ({ content, ...props }) => {
   const router = useRouter();
-  const [showFullDescription, setShowFullDescription] = useState(false);
   const [shownDescription, setShownDescription] = useState("");
 
   useEffect(() => {
     props.lasMer
-      ? setShownDescription(content.description.substring(0, 165))
+      ? setShownDescription(content.description.substring(0, 140))
       : setShownDescription(content.description);
   }, []);
-
-  function readMoreDescription() {
-    setShowFullDescription(!showFullDescription);
-    if (!showFullDescription) {
-      setShownDescription(content.description);
-    } else {
-      setShownDescription(content.description.substring(0, 165));
-    }
-  }
 
   return (
     <Column md={3} lg={3} xs={11}>
@@ -245,7 +236,7 @@ const EventMenuCard = ({ content, ...props }) => {
             <div className="description-and-menu-button">
               <p className="description">
                 {shownDescription}
-                {props.lasMer && !showFullDescription && <span>...</span>}
+                {props.lasMer && <span>...</span>}
               </p>
               {!props.lasMer ? (
                 <button
@@ -258,7 +249,7 @@ const EventMenuCard = ({ content, ...props }) => {
                 <div className="event-buttons margin-bot-28 full-width">
                   <button
                     className="lasmer-button"
-                    onClick={() => readMoreDescription()}
+                    onClick={() => props.readMore(content)}
                   >
                     LAS MER
                   </button>
