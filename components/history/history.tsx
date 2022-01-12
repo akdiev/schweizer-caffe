@@ -125,9 +125,6 @@ const History = ({ images }) => {
     <div className="events-green-background">
       <div className="events-container container">
         <h1 className="event-header">Our History</h1>
-        <p className="event-subheader">
-          Enim volutpat velit molestie morbi pharetra nam nisi et.
-        </p>
         <hr className="gold-line" />
         <div className="cards">
           <div className="history-card">
