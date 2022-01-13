@@ -47,6 +47,9 @@
 
     .nav-item a {
       color: $black;
+      &:hover {
+        color: lighten($black, $amount: 45%);
+      }
     }
 
     .nav-container svg path {
@@ -325,6 +328,12 @@
   align-items: center;
 
   color: #39312a;
+  &:hover {
+    background: lighten($color: #ca9f68, $amount: 10%);
+  }
+  &:focus {
+    background: lighten($color: #ca9f68, $amount: 15%);
+  }
 }
 
 .menu-button-small {
@@ -368,5 +377,10 @@
       width: 24px;
       height: 24px;
     }
+  }
+}
+
+.nav-item-text {
+  &:hover {
   }
 }

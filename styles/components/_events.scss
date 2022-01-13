@@ -341,6 +341,9 @@
   background: rgba(238, 238, 238, 0.4);
   justify-content: center;
   align-items: center;
+  .column {
+    z-index: 99;
+  }
 
   .event-card-content {
     display: flex;
@@ -371,7 +374,7 @@
       justify-content: center;
       align-items: center;
       height: 100%;
-      margin-top: 8px;
+      margin-top: 6px;
       font-weight: 100;
     }
   }

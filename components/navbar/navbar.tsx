@@ -68,7 +68,12 @@ const Navbar = (props) => {
           <div className="nav-section">
             {navOptions.map((item, k) => (
               <div className="nav-item" key={k}>
-                <a onClick={() => handleClick(`#${item.href}`)}>{item.label}</a>
+                <a
+                  className="nav-item-text"
+                  onClick={() => handleClick(`#${item.href}`)}
+                >
+                  {item.label}
+                </a>
               </div>
             ))}
           </div>

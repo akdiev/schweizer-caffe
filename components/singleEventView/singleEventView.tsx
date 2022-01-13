@@ -3,10 +3,13 @@ import Column from "../../assets/Bulma/Column";
 
 const SingleEventView = ({ content, ...props }) => {
   return (
-    <div className="event-modal">
+    <div className="event-modal" onClick={() => props.closeModal()}>
       <div className="event-card-content">
         <Column md={3} lg={3} xs={11}>
-          <div className="event-card-container">
+          <div
+            className="event-card-container"
+            onClick={(event) => event.stopPropagation()}
+          >
             <span
               className="close-event-modal-button"
               onClick={() => props.closeModal()}
