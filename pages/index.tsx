@@ -18,8 +18,6 @@ import axios from "axios";
 import SingleEventView from "../components/singleEventView/singleEventView";
 
 function Home({ data }) {
-  const topRef = useRef(null);
-  const router = useRouter();
   const [menuIsOpened, setMenuIsOpened] = useState(false);
   const [singleEventModalContent, setSingleEventModalContent] = useState(null);
 
@@ -47,8 +45,6 @@ function Home({ data }) {
     ],
   ];
 
-  const galleryImages = [];
-
   useEffect(() => {
     if (menuIsOpened || singleEventModalContent) {
       document.querySelector("html").classList.add("is-clipped");
@@ -58,17 +54,15 @@ function Home({ data }) {
     };
   }, [menuIsOpened, singleEventModalContent]);
 
-  const executeScroll = () => {
-    topRef.current.scrollIntoView();
-  };
-
   return (
     <div>
-      <Navbar
-        openMenu={setMenuIsOpened}
-        profile={profile}
-        scrollTo={(element) => scollToElement(element)}
-      />
+      <Element name="#navbar">
+        <Navbar
+          openMenu={setMenuIsOpened}
+          profile={profile}
+          scrollTo={(element) => scollToElement(element)}
+        />
+      </Element>
       <Element className="background-margin" name="#home">
         <Hero profile={profile} />
       </Element>
@@ -94,7 +88,7 @@ function Home({ data }) {
       <Footer
         profile={profile}
         isMobile={isMobile}
-        scrollToTop={executeScroll}
+        scrollToTop={() => scollToElement("#navbar")}
       />
       {singleEventModalContent && (
         <SingleEventView

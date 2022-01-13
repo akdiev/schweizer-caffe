@@ -17,7 +17,7 @@ const Footer = ({ ...props }) => {
               </span>
               <div className="middle-footer">
                 <span onClick={() => router.push("schweizer.se")}>
-                  <Logo imgSource="images/footer-logo.svg" />
+                  <Logo imgSource="images/white-square-logo.svg" />
                 </span>
                 <div className="social-footer">
                   <div className="icons">
@@ -44,7 +44,7 @@ const Footer = ({ ...props }) => {
           ) : (
             <>
               <a href="#home" className="footer-logo">
-                <Logo imgSource="images/footer-logo.svg" />
+                <Logo imgSource="images/white-square-logo.svg" />
               </a>
               <div className="middle-footer">
                 <span className="scroll-to-top" onClick={props.scrollToTop}>
