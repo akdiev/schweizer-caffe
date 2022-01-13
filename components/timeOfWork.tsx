@@ -12,7 +12,7 @@ const TimeOfWork = ({ workTime }) => {
 
   return (
     <div className={`time-of-work dropdown is-right ${active && "is-active"}`}>
-      <div className="dropdown-trigger">
+      <div className={`dropdown-trigger ${active && "active"}`}>
         <button
           className="menu-button"
           aria-haspopup="true"
@@ -25,7 +25,7 @@ const TimeOfWork = ({ workTime }) => {
               : "Enligt överenskommelse"}
           </span>
           {formattedWorkTime && (
-            <span className="icon-24">
+            <span className={`icon-24 ${active && "active"}`}>
               <img
                 src="/images/icons/chevron-down-circle.svg"
                 alt="Arrow down"

@@ -12,7 +12,7 @@ const SingleCard = (props) => {
         {}
         <img
           src={imageSource}
-          className={whiteCircle ? "white-border" : ""}
+          className={whiteCircle && "white-border"}
           alt="Card"
         />
       </div>
@@ -52,7 +52,7 @@ const HeroCards = ({ setOrderTakeway, profile, ...props }) => {
         </div>
         <div
           className="column is-4-desktop is-12-mobile is-12-tablet cursor-pointer"
-          onClick={() => window.open("tel:900300400")}
+          onClick={() => window.open("tel:+4684115177")}
         >
           <SingleCard
             imageSource="/images/icons/icons/call-icon.png"

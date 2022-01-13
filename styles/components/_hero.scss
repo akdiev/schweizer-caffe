@@ -71,6 +71,9 @@
       line-height: 18px;
 
       color: #ffffff;
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     &-image {
@@ -294,6 +297,9 @@
   margin-left: 8px;
   width: 24px;
   height: 24px;
+  &.active {
+    transform: rotate(180deg);
+  }
 }
 
 .basket-icon {
@@ -338,5 +344,18 @@
     .column {
       padding: 0.25rem 0.75rem;
     }
+  }
+}
+
+.hero-card-image {
+  img {
+    fill: #212121;
+  }
+}
+
+.dropdown-trigger {
+  &.active {
+    border: 1px solid white;
+    border-radius: 99px;
   }
 }

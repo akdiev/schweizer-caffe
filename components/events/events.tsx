@@ -247,7 +247,7 @@ const EventMenuCard = ({ content, ...props }) => {
                     className="lasmer-button"
                     onClick={() => props.readMore(content)}
                   >
-                    LAS MER
+                    Läs mer
                   </button>
                   <button
                     className="menu-button"
