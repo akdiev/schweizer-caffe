@@ -16,10 +16,12 @@ import EventsGallery from "../components/events/eventsGallery";
 import Menu from "../components/menu/menu";
 import axios from "axios";
 import SingleEventView from "../components/singleEventView/singleEventView";
+import { IoMdArrowDropup } from "react-icons/io";
 
 function Home({ data }) {
   const [menuIsOpened, setMenuIsOpened] = useState(false);
   const [singleEventModalContent, setSingleEventModalContent] = useState(null);
+  const [showBackToTopIcon, setShowBackToTopIcon] = useState(false);
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
@@ -45,6 +47,11 @@ function Home({ data }) {
     ],
   ];
 
+  const showHideScrollToTop = () => {
+    let yOffset = window.pageYOffset;
+    yOffset > 249 ? setShowBackToTopIcon(true) : setShowBackToTopIcon(false);
+  };
+
   useEffect(() => {
     if (menuIsOpened || singleEventModalContent) {
       document.querySelector("html").classList.add("is-clipped");
@@ -53,6 +60,10 @@ function Home({ data }) {
       document.querySelector("html").classList.remove("is-clipped");
     };
   }, [menuIsOpened, singleEventModalContent]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", showHideScrollToTop);
+  }, []);
 
   return (
     <div>
@@ -66,6 +77,16 @@ function Home({ data }) {
       <Element className="background-margin" name="#home">
         <Hero profile={profile} />
       </Element>
+      {showBackToTopIcon && (
+        <div className="scroll-to-top-container">
+          <span
+            className="scroll-to-top"
+            onClick={() => scollToElement("#navbar")}
+          >
+            <IoMdArrowDropup className="arrow-up-icon" />
+          </span>
+        </div>
+      )}
       <Element name="#restaurant">
         <RestaurantEvents
           readMoreModal={(eventObject) =>
@@ -85,11 +106,7 @@ function Home({ data }) {
       </Element>
       <ContactUs profile={profile} />
 
-      <Footer
-        profile={profile}
-        isMobile={isMobile}
-        scrollToTop={() => scollToElement("#navbar")}
-      />
+      <Footer profile={profile} isMobile={isMobile} />
       {singleEventModalContent && (
         <SingleEventView
           closeModal={() => setSingleEventModalContent(null)}

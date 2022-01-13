@@ -1,4 +1,6 @@
 import React from "react";
+import Column from "../assets/Bulma/Column";
+import Columns from "../assets/Bulma/Columns";
 import { formatWorkTime, getTodayWorktime } from "../utils/helpers";
 
 const TimeOfWork = ({ workTime }) => {
@@ -43,34 +45,48 @@ const TimeOfWork = ({ workTime }) => {
               </p>
             </div>
             <hr className="dropdown-divider" />
-            <div className="dropdown-item">
-              <p className="weekday">Måndag:</p>
-              <p className="worktime">{formattedWorkTime["monday"]}</p>
-            </div>
-            <div className="dropdown-item">
-              <p className="weekday">Tisdag:</p>
-              <p className="worktime">{formattedWorkTime["tuesday"]}</p>
-            </div>
-            <div className="dropdown-item">
-              <p className="weekday">Onsdag:</p>
-              <p className="worktime">{formattedWorkTime["wednesday"]}</p>
-            </div>
-            <div className="dropdown-item">
-              <p className="weekday">Torsdag:</p>
-              <p className="worktime">{formattedWorkTime["thursday"]}</p>
-            </div>
-            <div className="dropdown-item">
-              <p className="weekday">Fredag:</p>
-              <p className="worktime">{formattedWorkTime["friday"]}</p>
-            </div>
-            <div className="dropdown-item">
-              <p className="weekday">Lördag:</p>
-              <p className="worktime">{formattedWorkTime["saturday"]}</p>
-            </div>
-            <div className="dropdown-item">
-              <p className="weekday">Söndag:</p>
-              <p className="worktime">{formattedWorkTime["sunday"]}</p>
-            </div>
+            <Columns className="dropdown-item">
+              <Column className="weekday">Måndag:</Column>
+              <Column className="worktime">
+                {formattedWorkTime["monday"]}
+              </Column>
+            </Columns>
+            <Columns className="dropdown-item">
+              <Column className="weekday">Tisdag:</Column>
+              <Column className="worktime">
+                {formattedWorkTime["tuesday"]}
+              </Column>
+            </Columns>
+            <Columns className="dropdown-item">
+              <Column className="weekday">Onsdag:</Column>
+              <Column className="worktime">
+                {formattedWorkTime["wednesday"]}
+              </Column>
+            </Columns>
+            <Columns className="dropdown-item">
+              <Column className="weekday">Torsdag:</Column>
+              <Column className="worktime">
+                {formattedWorkTime["thursday"]}
+              </Column>
+            </Columns>
+            <Columns className="dropdown-item">
+              <Column className="weekday">Fredag:</Column>
+              <Column className="worktime">
+                {formattedWorkTime["friday"]}
+              </Column>
+            </Columns>
+            <Columns className="dropdown-item">
+              <Column className="weekday">Lördag:</Column>
+              <Column className="worktime">
+                {formattedWorkTime["saturday"]}
+              </Column>
+            </Columns>
+            <Columns className="dropdown-item">
+              <Column className="weekday">Söndag:</Column>
+              <Column className="worktime">
+                {formattedWorkTime["sunday"]}
+              </Column>
+            </Columns>
             <hr className="dropdown-divider" />
             <div className="dropdown-item">
               <div className="time-of-work-title has-font-14 align-left">

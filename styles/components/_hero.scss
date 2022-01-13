@@ -192,6 +192,7 @@
   display: flex;
   background: #ca9f68;
   justify-content: space-between;
+
   .time-of-work-title {
     font-family: Vidaloka;
     font-style: normal;
@@ -357,5 +358,16 @@
   &.active {
     border: 1px solid white;
     border-radius: 99px;
+  }
+}
+
+.time-of-work-content {
+  .column {
+    padding: 0 !important;
+  }
+  .columns {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
   }
 }

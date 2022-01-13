@@ -12,9 +12,6 @@ const Footer = ({ ...props }) => {
         <div className="footer-subcontainer">
           {props.isMobile ? (
             <div className="footer-mobile-container">
-              <span className="scroll-to-top" onClick={props.scrollToTop}>
-                <IoMdArrowDropup className="arrow-up-icon" />
-              </span>
               <div className="middle-footer">
                 <span onClick={() => router.push("schweizer.se")}>
                   <Logo imgSource="images/white-square-logo.svg" />
@@ -47,9 +44,6 @@ const Footer = ({ ...props }) => {
                 <Logo imgSource="images/white-square-logo.svg" />
               </a>
               <div className="middle-footer">
-                <span className="scroll-to-top" onClick={props.scrollToTop}>
-                  <IoMdArrowDropup className="arrow-up-icon" />
-                </span>
                 {/* <p className="gray-text-guest">
                   Denna hemsida är skapad med hjälp av Guestie
                 </p> */}
