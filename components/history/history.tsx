@@ -214,7 +214,7 @@ const History = ({ images }) => {
                 onClick={() => handleBack()}
                 className="pagination-back is-clickable"
               >
-                <img src="/images/icons/icons/circle-left.png" alt="Go back" />
+                <img src="/images/icons/icons/circle-left.svg" alt="Go back" />
               </span>
               {pages.map((page, key) => (
                 <span
@@ -230,7 +230,7 @@ const History = ({ images }) => {
                 className="pagination-forward is-clickable"
               >
                 <img
-                  src="/images/icons/icons/circle-right.png"
+                  src="/images/icons/icons/circle-right.svg"
                   alt="Go forward"
                 />
               </span>

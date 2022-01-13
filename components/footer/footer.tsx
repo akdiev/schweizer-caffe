@@ -24,7 +24,10 @@ const Footer = ({ ...props }) => {
                     <a href={props.profile?.instagram}>
                       <BsInstagram className="instagram-icon" />
                     </a>
-                    <a href={props.profile?.facebook}>
+                    <a
+                      href={props.profile?.facebook}
+                      className="cursor-pointer"
+                    >
                       <FacebookIcon />
                     </a>
                   </div>
@@ -59,10 +62,13 @@ const Footer = ({ ...props }) => {
           {!props.isMobile ? (
             <div className="social-footer">
               <div className="icons">
-                <span onClick={() => router.push(props.profile?.instagram)}>
+                <span onClick={() => window.open(props.profile?.instagram)}>
                   <BsInstagram className="instagram-icon" />
                 </span>
-                <span onClick={() => router.push(props.profile?.facebook)}>
+                <span
+                  onClick={() => window.open(props.profile?.facebook)}
+                  className="cursor-pointer"
+                >
                   <FacebookIcon />
                 </span>
               </div>
