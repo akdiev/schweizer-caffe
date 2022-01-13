@@ -18,11 +18,11 @@ const Footer = ({ ...props }) => {
                 </span>
                 <div className="social-footer">
                   <div className="icons">
-                    <a href={props.profile?.instagram}>
+                    <a onClick={() => window.open(props.profile?.instagram)}>
                       <BsInstagram className="instagram-icon" />
                     </a>
                     <a
-                      href={props.profile?.facebook}
+                      onClick={() => window.open(props.profile?.facebook)}
                       className="cursor-pointer"
                     >
                       <FacebookIcon />

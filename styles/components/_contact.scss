@@ -171,6 +171,9 @@
 
 .font-secondary {
   color: #fff !important;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .box:not(:last-child) {

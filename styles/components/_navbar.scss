@@ -347,6 +347,12 @@
   border-radius: 40px;
   display: flex;
   align-items: center;
+  &:hover {
+    background: lighten($color: #ca9f68, $amount: 10%);
+  }
+  &:focus {
+    background: lighten($color: #ca9f68, $amount: 15%);
+  }
 }
 
 .menu-button-higher {
@@ -362,6 +368,12 @@
   line-height: 18px;
   text-align: center;
   text-transform: uppercase;
+  &:hover {
+    background: lighten($color: #ca9f68, $amount: 10%);
+  }
+  &:focus {
+    background: lighten($color: #ca9f68, $amount: 15%);
+  }
 
   color: #39312a;
 }
