@@ -18,7 +18,7 @@ const Hero = ({ profile }) => {
           src="/images/dashboard-background.jpg"
           layout="fill"
           objectFit="cover"
-          quality={50}
+          quality={100}
           priority
         />
         <div className="hero-content container">
