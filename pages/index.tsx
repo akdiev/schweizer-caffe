@@ -18,7 +18,7 @@ import axios from "axios";
 import SingleEventView from "../components/singleEventView/singleEventView";
 import { IoMdArrowDropup } from "react-icons/io";
 
-function Home({ data }) {
+function Home({ data, menus }) {
   const [menuIsOpened, setMenuIsOpened] = useState(false);
   const [singleEventModalContent, setSingleEventModalContent] = useState(null);
   const [showBackToTopIcon, setShowBackToTopIcon] = useState(false);
@@ -114,7 +114,9 @@ function Home({ data }) {
         />
       )}
 
-      {menuIsOpened && <Menu closeModal={() => setMenuIsOpened(false)} />}
+      {menuIsOpened && (
+        <Menu closeModal={() => setMenuIsOpened(false)} menus={menus} />
+      )}
     </div>
   );
 }
@@ -123,7 +125,14 @@ export async function getStaticProps(context) {
   let {
     data: { data },
   } = await axios("https://login.guestie.se/api/profiles/330/", context);
-  return { props: { data } };
+
+  let menus = await axios(
+    "https://login.guestie.se/api/profiles/330/menus",
+    context
+  );
+  menus = menus.data;
+
+  return { props: { data, menus } };
 }
 
 export default Home;

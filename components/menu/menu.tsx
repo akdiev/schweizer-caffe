@@ -22,6 +22,7 @@ const Menu = (props) => {
       menuItems.push(testMeal);
     }
   }
+  console.log(props.menus);
 
   window.onbeforeunload = function () {
     props.closeModal();
@@ -58,16 +59,20 @@ const Menu = (props) => {
           </div>
         )}
 
-        <div className="restaurant-items-container container">
-          <div className="restaurant-menu-content">
-            <h2 className="lunch-category"> Lunch category 01</h2>
-            <div className="regular-menu">
-              {menuItems.map((menuItem, k) => (
-                <MenuCard menuItem={menuItem} key={k} />
-              ))}
+        {props.menus.data[0].categories.map((category) => {
+          return (
+            <div className="restaurant-items-container container">
+              <div className="restaurant-menu-content">
+                <h2 className="lunch-category"> {category.name}</h2>
+                <div className="regular-menu">
+                  {category.items.map((menuItem, k) => (
+                    <MenuCard menuItem={menuItem} key={k} />
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -76,21 +81,17 @@ const Menu = (props) => {
 const MenuCard = ({ menuItem }) => {
   return (
     <div className="menu-card-item">
-      {menuItem.img ? (
+      {menuItem.img && (
         <div className="menu-card-image">
           <img src={menuItem.img} alt={menuItem.mealName} />
         </div>
-      ) : (
-        ""
       )}
       <div className="name-and-price">
         <Columns>
           <Column md={8} className="menu-mealName">
-            {menuItem.mealName}
+            {menuItem.name}
           </Column>
-          <Column className="menu-price">
-            {menuItem.price} {"" + "SEK"}
-          </Column>
+          <Column className="menu-price">{menuItem.price}</Column>
         </Columns>
         <div className="menuItem-description"> {menuItem.description} </div>
       </div>
