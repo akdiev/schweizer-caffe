@@ -7,28 +7,12 @@ import { useMediaQuery } from "react-responsive";
 import { AiOutlineClose } from "react-icons/ai";
 
 const Menu = (props) => {
-  const menuItems = [];
   const isMobile = useMediaQuery({ maxWidth: 767 });
-
-  const testMeal = {
-    mealName: "Mughal Empire Salmon Salad",
-    price: 14,
-    description:
-      "Faucibus ullamcorper ullamcorper dui sed lobortis. A ipsum mauris sed lobortis pulvinar.",
-    img: "images/menu-item.jpg",
-  };
-  function fillMenu() {
-    for (var i = 0; i < 16; i++) {
-      menuItems.push(testMeal);
-    }
-  }
-  console.log(props.menus);
 
   window.onbeforeunload = function () {
     props.closeModal();
   };
 
-  fillMenu();
   return (
     <div className="green-background">
       <div className="container">
