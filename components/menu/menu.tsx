@@ -17,11 +17,22 @@ const Menu = (props) => {
   return (
     <div className="green-background">
       <div className="container">
-        <span className="close-modal-button" onClick={() => props.closeModal()}>
-          <AiOutlineClose />
-        </span>
+        {!isMobile && (
+          <span
+            className="close-modal-button"
+            onClick={() => props.closeModal()}
+          >
+            <AiOutlineClose />
+          </span>
+        )}
         {isMobile ? (
           <div className="mobile-header">
+            <span
+              className="close-menu-button"
+              onClick={() => props.closeModal()}
+            >
+              <i className="fal fa-times close-icon"></i>
+            </span>
             <Logo imgSource="images/white-logo.svg" />
             <div className="menu-header">
               <h1 className="menu-header-title">Meny</h1>
@@ -29,6 +40,17 @@ const Menu = (props) => {
                 <AiOutlineDownload />
                 <span>Download PDF</span>
               </button>
+            </div>
+            <div className="menu-tabs">
+              {props.menus.data.map((menu, index) => (
+                <div
+                  className={`single-tab ${selectedMenu == index && "active"}`}
+                  onClick={() => setSelectedMenu(index)}
+                  key={index}
+                >
+                  <p>{menu.name}</p>
+                </div>
+              ))}
             </div>
           </div>
         ) : (
