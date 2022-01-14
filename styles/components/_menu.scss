@@ -18,6 +18,8 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+  flex-direction: column;
+  border-bottom: 1px solid #ffffff;
 }
 
 .menu-header {
@@ -27,9 +29,28 @@
   align-items: center;
   justify-content: space-between;
   padding: 40px 50px;
-  border-bottom: 1px solid #ffffff;
   .logo-component {
     width: 300px;
+  }
+}
+
+.menu-tabs {
+  padding: 10px 50px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 16px;
+}
+.single-tab {
+  color: #ca9f68;
+  cursor: pointer;
+  padding: 8px 16px;
+  &.active {
+    border-radius: 16px;
+    background: #ca9f68;
+    color: black;
+  }
+  &:hover {
+    color: lighten(#ca9f68, 40%);
   }
 }
 

@@ -7,6 +7,7 @@ import { useMediaQuery } from "react-responsive";
 import { AiOutlineClose } from "react-icons/ai";
 
 const Menu = (props) => {
+  const [selectedMenu, setSelectedMenu] = useState(0);
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   window.onbeforeunload = function () {
@@ -23,7 +24,7 @@ const Menu = (props) => {
           <div className="mobile-header">
             <Logo imgSource="images/white-logo.svg" />
             <div className="menu-header">
-              <h1 className="menu-header-title">LunchMeny</h1>
+              <h1 className="menu-header-title">Meny</h1>
               <button className="pdf-download">
                 <AiOutlineDownload />
                 <span>Download PDF</span>
@@ -34,16 +35,26 @@ const Menu = (props) => {
           <div className="menu-header-wrapper">
             <div className="menu-header">
               <Logo imgSource="images/white-logo.svg" />
-              <h1 className="menu-header-title">LunchMeny</h1>
+              <h1 className="menu-header-title">Meny</h1>
               <button className="pdf-download">
                 <AiOutlineDownload />
                 <span>Download PDF</span>
               </button>
             </div>
+            <div className="menu-tabs">
+              {props.menus.data.map((menu, index) => (
+                <div
+                  className={`single-tab ${selectedMenu == index && "active"}`}
+                  onClick={() => setSelectedMenu(index)}
+                >
+                  <p>{menu.name}</p>
+                </div>
+              ))}
+            </div>
           </div>
         )}
 
-        {props.menus.data[0].categories.map((category) => {
+        {props.menus.data[selectedMenu].categories.map((category) => {
           return (
             <div className="restaurant-items-container container">
               <div className="restaurant-menu-content">
