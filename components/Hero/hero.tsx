@@ -18,8 +18,8 @@ const Hero = ({ profile }) => {
           src="/images/dashboard-background.svg"
           layout="fill"
           objectFit="cover"
-          quality={80}
-          priority
+          quality={70}
+          loading="lazy"
         />
         <div className="hero-content container">
           <p className="hero-feature">Feature</p>
