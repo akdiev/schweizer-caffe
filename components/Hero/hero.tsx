@@ -19,6 +19,7 @@ const Hero = ({ profile }) => {
           layout="fill"
           objectFit="cover"
           quality={80}
+          priority
         />
         <div className="hero-content container">
           <p className="hero-feature">Feature</p>
