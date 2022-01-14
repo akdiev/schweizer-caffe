@@ -46,6 +46,7 @@ const Menu = (props) => {
                 <div
                   className={`single-tab ${selectedMenu == index && "active"}`}
                   onClick={() => setSelectedMenu(index)}
+                  key={index}
                 >
                   <p>{menu.name}</p>
                 </div>
@@ -54,9 +55,9 @@ const Menu = (props) => {
           </div>
         )}
 
-        {props.menus.data[selectedMenu].categories.map((category) => {
+        {props.menus.data[selectedMenu].categories.map((category, index) => {
           return (
-            <div className="restaurant-items-container container">
+            <div className="restaurant-items-container container" key={index}>
               <div className="restaurant-menu-content">
                 <h2 className="lunch-category"> {category.name}</h2>
                 <div className="regular-menu">

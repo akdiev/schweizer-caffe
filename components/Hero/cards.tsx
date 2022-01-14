@@ -1,6 +1,5 @@
 import React from "react";
 import TimeOfWork from "../timeOfWork";
-import { IoMdBasket } from "react-icons/io";
 import { useRouter } from "next/router";
 
 const SingleCard = (props) => {
