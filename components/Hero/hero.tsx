@@ -15,7 +15,7 @@ const Hero = ({ profile }) => {
       <div id="home" className="hero">
         <Image
           alt="hero background"
-          src="/images/dashboard-background.svg"
+          src="/images/dashboard-background.jpg"
           layout="fill"
           objectFit="cover"
           quality={50}
