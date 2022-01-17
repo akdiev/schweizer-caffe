@@ -78,14 +78,12 @@ function Home({ data, menus }) {
         <Hero profile={profile} />
       </Element>
       {showBackToTopIcon && (
-        <div className="scroll-to-top-container">
-          <span
-            className="scroll-to-top"
-            onClick={() => scollToElement("#navbar")}
-          >
-            <IoMdArrowDropup className="arrow-up-icon" />
-          </span>
-        </div>
+        <span
+          className="scroll-to-top"
+          onClick={() => scollToElement("#navbar")}
+        >
+          <IoMdArrowDropup className="arrow-up-icon" />
+        </span>
       )}
       <Element name="#restaurant">
         <RestaurantEvents
