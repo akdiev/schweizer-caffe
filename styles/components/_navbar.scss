@@ -348,6 +348,7 @@
   display: flex;
   align-items: center;
   color: #39312a;
+  font-weight: 700;
   &:hover {
     background: lighten($color: #ca9f68, $amount: 10%);
   }

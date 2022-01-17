@@ -17,14 +17,6 @@ const Menu = (props) => {
   return (
     <div className="green-background">
       <div className="container">
-        {!isMobile && (
-          <span
-            className="close-modal-button"
-            onClick={() => props.closeModal()}
-          >
-            <AiOutlineClose />
-          </span>
-        )}
         {isMobile ? (
           <div className="mobile-header">
             <span
@@ -54,7 +46,13 @@ const Menu = (props) => {
             </div>
           </div>
         ) : (
-          <div className="menu-header-wrapper">
+          <div className="menu-header-wrapper container">
+            <span
+              className="close-modal-button"
+              onClick={() => props.closeModal()}
+            >
+              <AiOutlineClose />
+            </span>
             <div className="menu-header">
               <Logo imgSource="images/white-logo.svg" />
               <h1 className="menu-header-title">Meny</h1>
