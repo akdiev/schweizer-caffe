@@ -76,21 +76,22 @@ const Menu = (props) => {
             </div>
           </div>
         )}
-
-        {props.menus.data[selectedMenu].categories.map((category, index) => {
-          return (
-            <div className="restaurant-items-container container" key={index}>
-              <div className="restaurant-menu-content">
-                <h2 className="lunch-category"> {category.name}</h2>
-                <div className="regular-menu">
-                  {category.items.map((menuItem, k) => (
-                    <MenuCard menuItem={menuItem} key={k} />
-                  ))}
+        <div className="menu-wrapper">
+          {props.menus.data[selectedMenu].categories.map((category, index) => {
+            return (
+              <div className="restaurant-items-container container" key={index}>
+                <div className="restaurant-menu-content">
+                  <h2 className="lunch-category"> {category.name}</h2>
+                  <div className="regular-menu">
+                    {category.items.map((menuItem, k) => (
+                      <MenuCard menuItem={menuItem} key={k} />
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );

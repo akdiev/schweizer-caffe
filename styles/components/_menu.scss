@@ -57,6 +57,11 @@
   &:hover {
     color: lighten(#ca9f68, 40%);
   }
+  @include mobile {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 14px;
+  }
 }
 
 .restaurant-menu-content {
@@ -75,6 +80,7 @@
   align-items: center;
   span {
     margin-left: 13px;
+    color: #39312a;
   }
 }
 
@@ -226,6 +232,7 @@
   .pdf-download {
     padding: 8px 8px;
     margin-right: 16px;
+    color: #39312a;
   }
 
   .regular-menu {
